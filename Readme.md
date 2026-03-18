@@ -228,7 +228,9 @@ Cybershield_project_WTB5.0_grp45/
 **Team Cyber Shield** — Joint Effort 🤝
 
 ToolRole🤖 Claude (Anthropic)Primary development — frontend, AI engine, UI/UX💬 ChatGPT (OpenAI)Content, ideation, scam scenarios✨ Google GeminiResearch, validation, SDG alignment🔍 Google ResearchCybercrime statistics & real-world data
-Plus a Combined AI + Human Intelligence callout at the bottom. The presentation is now 9 slides total! 🛡️can you add this to the readme we first did and the game code as well7:26 AMREADME.md — FINAL VERSIONDocument ∙ Version 2 ## 🤖 AI Tools & Research Methodology
+Plus a Combined AI + Human Intelligence callout at the bottom.
+
+## 🤖 AI Tools & Research Methodology
 
 This project was built using a **combination of AI tools, combined research, and collaborative development** — each contributing a unique strength to the final product.
 
