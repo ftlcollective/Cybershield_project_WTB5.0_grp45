@@ -1,11 +1,9 @@
 <div align="center">
 
 # 🛡️ CYBER SHIELD
-
 ### Human Firewall Challenge
 
 <img src="https://raw.githubusercontent.com/ftlcollective/Cybershield_project_WTB5.0_grp45/d6b20fee8fada94ed8352381fa677538936342a9/Images/IMG_1844.png" alt="Team Cyber Shield Logo" width="220"/>
-
 
 > **A behavioural cybersecurity training system that turns users into human firewalls through AI-powered scam simulation.**
 
@@ -14,11 +12,11 @@
 [![License](https://img.shields.io/badge/License-MIT-00FF9C?style=for-the-badge)](LICENSE)
 [![Status](https://img.shields.io/badge/Status-Live-00FF9C?style=for-the-badge)]()
 
-**[▶️ Play Live Demo](https://ftlcollective.github.io/Cybershield_project_WTB5.0_grp45)**  |  **[📄 Documentation](#-table-of-contents)**  |  **[🧠 AI Component](#-ai--behavioural-analysis-engine)**  |  **[🚀 Quick Start](#-quick-start)**
+**[▶️ Play Live Demo](https://ftlcollective.github.io/Cybershield_project_WTB5.0_grp45)** &nbsp;|&nbsp; **[📄 Documentation](#-table-of-contents)** &nbsp;|&nbsp; **[🧠 AI Component](#-ai--behavioural-analysis-engine)** &nbsp;|&nbsp; **[🚀 Quick Start](#-quick-start)**
 
 </div>
 
------
+---
 
 ## 📌 Table of Contents
 
@@ -35,17 +33,17 @@
 - [Team](#-team)
 - [License](#-license)
 
------
+---
 
 ## 🎯 About the Project
 
 **Cyber Shield: Human Firewall Challenge** is a gamified, escape-room-style cybersecurity training game. Players must survive 5 escalating cyber threats — from phishing emails to multi-step identity theft attacks.
 
-Every decision is tracked by an AI-powered **Behavioural Analysis Engine** that computes a personalised **Human Risk Score** and classifies the player’s vulnerability pattern in real time.
+Every decision is tracked by an AI-powered **Behavioural Analysis Engine** that computes a personalised **Human Risk Score** and classifies the player's vulnerability pattern in real time.
 
 > This is NOT just a game. It is a **behavioural cybersecurity training system** designed to build real, lasting cyber immunity.
 
------
+---
 
 ## 🚨 Problem Statement
 
@@ -54,42 +52,42 @@ Every decision is tracked by an AI-powered **Behavioural Analysis Engine** that 
 - 📚 Most cybersecurity training is **boring, passive, and forgettable**
 - 🎯 People learn best through **realistic, high-stakes experience**
 
------
+---
 
 ## 🌍 SDG Alignment
 
-|SDG       |Goal                                |How Cyber Shield Helps                              |
-|----------|------------------------------------|----------------------------------------------------|
-|**SDG 4** |Quality Education                   |Delivers interactive digital literacy training      |
-|**SDG 16**|Peace, Justice & Strong Institutions|Reduces cybercrime victimisation in communities     |
-|**SDG 10**|Reduced Inequalities                |Free, accessible cyber training for all demographics|
+| SDG | Goal | How Cyber Shield Helps |
+|-----|------|------------------------|
+| **SDG 4** | Quality Education | Delivers interactive digital literacy training |
+| **SDG 16** | Peace, Justice & Strong Institutions | Reduces cybercrime victimisation in communities |
+| **SDG 10** | Reduced Inequalities | Free, accessible cyber training for all demographics |
 
------
+---
 
 ## 🎮 Game Features
 
-|Feature               |Description                                           |
-|----------------------|------------------------------------------------------|
-|❤️ **Trust Meter**     |Health system — drains on bad decisions, starts at 100|
-|⏱️ **Countdown Timer** |Per-level pressure timer (30–55 seconds)              |
-|💰 **Virtual Money**   |$50,000 at stake — wrong decisions cost real amounts  |
-|🧠 **Behavioural AI**  |Real-time Human Risk Score + pattern classification   |
-|🏆 **Leaderboard**     |Score-ranked board based on trust, money & levels     |
-|🏅 **Badge System**    |5 achievement badges based on performance             |
-|⚡ **Instant Feedback**|Explanation after every decision with security tip    |
-|🔚 **Dynamic Endings** |Cyber Master / Human Firewall / Digitally Bankrupt    |
+| Feature | Description |
+|--------|-------------|
+| ❤️ **Trust Meter** | Health system — drains on bad decisions, starts at 100 |
+| ⏱️ **Countdown Timer** | Per-level pressure timer (30–55 seconds) |
+| 💰 **Virtual Money** | $50,000 at stake — wrong decisions cost real amounts |
+| 🧠 **Behavioural AI** | Real-time Human Risk Score + pattern classification |
+| 🏆 **Leaderboard** | Score-ranked board based on trust, money & levels |
+| 🏅 **Badge System** | 5 achievement badges based on performance |
+| ⚡ **Instant Feedback** | Explanation after every decision with security tip |
+| 🔚 **Dynamic Endings** | Cyber Master / Human Firewall / Digitally Bankrupt |
 
 ### 🏅 Badges
 
-|Badge            |Condition                          |
-|-----------------|-----------------------------------|
-|🎯 Phishing Sniper|Identified the first scam correctly|
-|🛡️ Scam Survivor  |Completed 3+ levels                |
-|😅 Too Trusting   |Fell for 2+ scams                  |
-|🔥 Human Firewall |Completed all levels with 70+ trust|
-|💎 Cyber Master   |Perfect run — no money lost        |
+| Badge | Condition |
+|-------|-----------|
+| 🎯 Phishing Sniper | Identified the first scam correctly |
+| 🛡️ Scam Survivor | Completed 3+ levels |
+| 😅 Too Trusting | Fell for 2+ scams |
+| 🔥 Human Firewall | Completed all levels with 70+ trust |
+| 💎 Cyber Master | Perfect run — no money lost |
 
------
+---
 
 ## 🗺️ Level Design
 
@@ -102,12 +100,11 @@ Level 5 — 🕸️ Multi-Step Attack       (55 sec)
 ```
 
 Each level presents a **realistic scenario UI** (email client, WhatsApp chat, browser login, phone call) with multiple choices that affect:
-
 - Trust Meter ❤️
 - Virtual Money 💰
 - AI Risk Score 🧠
 
------
+---
 
 ## 🤖 AI — Behavioural Analysis Engine
 
@@ -115,36 +112,36 @@ The **Behavioural Analysis Engine (BAE)** is the core AI component. It analyses 
 
 ### What it tracks:
 
-|Signal                |Weight  |Description                               |
-|----------------------|--------|------------------------------------------|
-|Wrong decision        |+20 risk|Base penalty per incorrect choice         |
-|Impulsive wrong answer|+10 risk|Decision made in under 4 seconds          |
-|Authority bias        |+8 risk |Fell for an authority-based manipulation  |
-|Urgency bias          |+8 risk |Fell for a fear/urgency-based manipulation|
+| Signal | Weight | Description |
+|--------|--------|-------------|
+| Wrong decision | +20 risk | Base penalty per incorrect choice |
+| Impulsive wrong answer | +10 risk | Decision made in under 4 seconds |
+| Authority bias | +8 risk | Fell for an authority-based manipulation |
+| Urgency bias | +8 risk | Fell for a fear/urgency-based manipulation |
 
 ### Output:
 
-|Score Range|Archetype                |
-|-----------|-------------------------|
-|0% wrong   |🛡️ Hyper-Vigilant         |
-|< 30% wrong|⚠️ Cautious but Vulnerable|
-|< 60% wrong|😟 Too Trusting           |
-|60%+ wrong |🚨 High Risk Behaviour    |
+| Score Range | Archetype |
+|-------------|-----------|
+| 0% wrong | 🛡️ Hyper-Vigilant |
+| < 30% wrong | ⚠️ Cautious but Vulnerable |
+| < 60% wrong | 😟 Too Trusting |
+| 60%+ wrong | 🚨 High Risk Behaviour |
 
------
+---
 
 ## 💻 Tech Stack
 
-|Technology           |Usage                              |
-|---------------------|-----------------------------------|
-|**React 18**         |Frontend UI framework              |
-|**React Hooks**      |State, effects, callbacks          |
-|**Vanilla CSS-in-JS**|Inline styling + injected keyframes|
-|**Google Fonts**     |Inter typeface                     |
-|**Custom BAE**       |AI behavioural analysis (pure JS)  |
-|**SVG**              |Animated circular timer ring       |
+| Technology | Usage |
+|-----------|-------|
+| **React 18** | Frontend UI framework |
+| **React Hooks** | State, effects, callbacks |
+| **Vanilla CSS-in-JS** | Inline styling + injected keyframes |
+| **Google Fonts** | Inter typeface |
+| **Custom BAE** | AI behavioural analysis (pure JS) |
+| **SVG** | Animated circular timer ring |
 
------
+---
 
 ## 🚀 Quick Start
 
@@ -164,7 +161,7 @@ npm install
 npm start
 ```
 
-Open <http://localhost:3000> in your browser.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ### Build for Production
 
@@ -179,7 +176,7 @@ npm install -g vercel
 vercel
 ```
 
------
+---
 
 ## 📁 Folder Structure
 
@@ -211,60 +208,77 @@ Cybershield_project_WTB5.0_grp45/
 └── README.md
 ```
 
------
+---
 
 ## 📸 Screenshots
 
-|Screen      |Screenshot                                 |Description                        |
-|------------|-------------------------------------------|-----------------------------------|
-|🏠 Intro     |![Intro](Images/screenshot-intro.png)      |Mission briefing + agent name entry|
-|📧 Level 1   |![Level 1](Images/screenshot-level1.png)   |Phishing email simulation          |
-|💬 Level 2   |![Level 2](Images/screenshot-level2.png)   |WhatsApp scam chat UI              |
-|🔐 Level 3   |![Level 3](Images/screenshot-level3.png)   |Fake bank login page               |
-|😰 Level 4   |![Level 4](Images/screenshot-level4.png)   |Live vishing call simulation       |
-|🕸️ Level 5   |![Level 5](Images/screenshot-level5.png)   |Multi-vector recruitment scam      |
-|📊 Feedback  |![Feedback](Images/screenshot-feedback.png)|AI analysis + security tip         |
-|🏆 End Screen|![End](Images/screenshot-endscreen.png)    |Final score, badges & ending       |
-
+| Screen | Screenshot | Description |
+|--------|------------|-------------|
+| 🏠 Intro | ![Intro](Images/screenshot-intro.png) | Mission briefing + agent name entry |
+| 📧 Level 1 | ![Level 1](Images/screenshot-level1.png) | Phishing email simulation |
+| 💬 Level 2 | ![Level 2](Images/screenshot-level2.png) | WhatsApp scam chat UI |
+| 🔐 Level 3 | ![Level 3](Images/screenshot-level3.png) | Fake bank login page |
+| 😰 Level 4 | ![Level 4](Images/screenshot-level4.png) | Live vishing call simulation |
+| 🕸️ Level 5 | ![Level 5](Images/screenshot-level5.png) | Multi-vector recruitment scam |
+| 📊 Feedback | ![Feedback](Images/screenshot-feedback.png) | AI analysis + security tip |
+| 🏆 End Screen | ![End](Images/screenshot-endscreen.png) | Final score, badges & ending |
 
 > 📸 *Add screenshots by saving images into the `/Images` folder and pushing to GitHub.*
 
------
+---
 
 ## 👥 Team
 
 **Team Cyber Shield** — Joint Effort 🤝
 
-|Role                |Name              |
-|--------------------|------------------|
-|🎯 Project Lead      |Joint Effort      |
-|🎮 Game Designer     |Joint Effort      |
-|💻 Frontend Developer|Claude (Anthropic)|
-|🤖 AI/Logic Developer|Claude (Anthropic)|
-|📄 Documentation     |Joint Effort      |
-|🎨 UI/UX Design      |Joint Effort      |
+ToolRole🤖 Claude (Anthropic)Primary development — frontend, AI engine, UI/UX💬 ChatGPT (OpenAI)Content, ideation, scam scenarios✨ Google GeminiResearch, validation, SDG alignment🔍 Google ResearchCybercrime statistics & real-world data
+Plus a Combined AI + Human Intelligence callout at the bottom. The presentation is now 9 slides total! 🛡️can you add this to the readme we first did and the game code as well7:26 AMREADME.md — FINAL VERSIONDocument ∙ Version 2 ## 🤖 AI Tools & Research Methodology
 
------
+This project was built using a **combination of AI tools, combined research, and collaborative development** — each contributing a unique strength to the final product.
+
+| Tool | Role |
+|------|------|
+🤖 Claude — Primary dev
+💬 ChatGPT — Content & ideation
+✨ Gemini — Research & validation
+🔍 Google — Data & statistics 🛡️
+
+---
 
 ## 📄 License
 
-This project is licensed under the **MIT License** — see the <LICENSE> file for details.
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
 
------
+---
+
+## 🤖 AI Tools & Research Methodology
+
+This project was built using a **combination of AI tools, combined research, and collaborative development** — each contributing a unique strength to the final product.
+
+| Tool | Role |
+|------|------|
+| 🤖 **Claude (Anthropic)** | Primary development — frontend, game logic, Behavioural Analysis Engine, UI/UX design, documentation |
+| 💬 **ChatGPT (OpenAI)** | Brainstorming scam scenarios, refining problem statements, drafting initial proposal content |
+| ✨ **Google Gemini** | Cross-referencing cybersecurity statistics, validating scam patterns, SDG alignment research |
+| 🔍 **Google Research** | Sourcing cybercrime statistics, real-world scam examples, and best practices in cybersecurity training |
+
+> 🤝 **Combined AI + Human Intelligence Approach** — Multiple AI tools were used collaboratively alongside team research and human insight, ensuring the platform is accurate, realistic, and impactful.
+
+---
 
 ## 🙏 Acknowledgements
 
 - Inspired by real cybercrime statistics across **Africa**
 - Designed to support **UN Sustainable Development Goals 4, 10 & 16**
-- Built as a capstone project for **[Your Institution Name]**
+- Built as a capstone project for **WOMEN TECHSTERS BOOTCAMPE 5.0 BY TECH4DEV**
 
------
+---
 
 <div align="center">
 
-**“Every person who plays Cyber Shield becomes a Human Firewall.”**
+**"Every person who plays Cyber Shield becomes a Human Firewall."**
 
-⭐ Star this repo if you found it useful  |  🐛 [Report a Bug](https://github.com/ftlcollective/Cybershield_project_WTB5.0_grp45/issues)  |  💡 [Request a Feature](https://github.com/ftlcollective/Cybershield_project_WTB5.0_grp45/issues)
+⭐ Star this repo if you found it useful &nbsp;|&nbsp; 🐛 [Report a Bug](https://github.com/ftlcollective/Cybershield_project_WTB5.0_grp45/issues) &nbsp;|&nbsp; 💡 [Request a Feature](https://github.com/ftlcollective/Cybershield_project_WTB5.0_grp45/issues)
 
 Made with 💙 by **Team Cyber Shield**
 
