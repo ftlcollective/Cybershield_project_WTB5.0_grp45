@@ -1,6 +1,4 @@
 <div align="center">
-
-#CYBER SHIELD
 ### Human Firewall Challenge
 
 <img src="https://raw.githubusercontent.com/ftlcollective/Cybershield_project_WTB5.0_grp45/d6b20fee8fada94ed8352381fa677538936342a9/Images/IMG_1844.png" alt="Team Cyber Shield Logo" width="220"/>
