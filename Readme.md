@@ -4,7 +4,8 @@
 
 ### Human Firewall Challenge
 
-![Team Cyber Shield Logo](https://raw.githubusercontent.com/ftlcollective/Cybershield_project_WTB5.0_grp45/main/images/IMG_1844.png)
+<img src="https://raw.githubusercontent.com/ftlcollective/Cybershield_project_WTB5.0_grp45/main/Images/IMG_1844.png" alt="Team Cyber Shield Logo" width="200"/>
+
 
 > **A behavioural cybersecurity training system that turns users into human firewalls through AI-powered scam simulation.**
 
@@ -13,7 +14,7 @@
 [![License](https://img.shields.io/badge/License-MIT-00FF9C?style=for-the-badge)](LICENSE)
 [![Status](https://img.shields.io/badge/Status-Live-00FF9C?style=for-the-badge)]()
 
-[▶️ Play Live Demo](#)  |  [📄 Documentation](#documentation)  |  [🧠 AI Component](#-ai--behavioural-analysis-engine)  |  [🚀 Quick Start](#-quick-start)
+**[▶️ Play Live Demo](https://ftlcollective.github.io/Cybershield_project_WTB5.0_grp45)**  |  **[📄 Documentation](#-table-of-contents)**  |  **[🧠 AI Component](#-ai--behavioural-analysis-engine)**  |  **[🚀 Quick Start](#-quick-start)**
 
 </div>
 
@@ -215,8 +216,8 @@ Cybershield_project_WTB5.0_grp45/
 │   ├── index.js            ← React entry point
 │   └── logo.png            ← Team Cyber Shield logo
 │
-├── images/
-│   ├── logo.png            ← Team Cyber Shield logo (original)
+├── Images/
+│   ├── IMG_1844.png               ← Team Cyber Shield logo (original)
 │   ├── screenshot-intro.png       ← Intro / home screen
 │   ├── screenshot-level1.png      ← Phishing email level
 │   ├── screenshot-level2.png      ← WhatsApp scam level
@@ -237,17 +238,17 @@ Cybershield_project_WTB5.0_grp45/
 
 |Screen      |Screenshot                                 |Description                        |
 |------------|-------------------------------------------|-----------------------------------|
-|🏠 Intro     |![Intro](images/screenshot-intro.png)      |Mission briefing + agent name entry|
-|📧 Level 1   |![Level 1](images/screenshot-level1.png)   |Phishing email simulation          |
-|💬 Level 2   |![Level 2](images/screenshot-level2.png)   |WhatsApp scam chat UI              |
-|🔐 Level 3   |![Level 3](images/screenshot-level3.png)   |Fake bank login page               |
-|😰 Level 4   |![Level 4](images/screenshot-level4.png)   |Live vishing call simulation       |
-|🕸️ Level 5   |![Level 5](images/screenshot-level5.png)   |Multi-vector recruitment scam      |
-|📊 Feedback  |![Feedback](images/screenshot-feedback.png)|AI analysis + security tip         |
-|🏆 End Screen|![End](images/screenshot-endscreen.png)    |Final score, badges & ending       |
+|🏠 Intro     |![Intro](Images/screenshot-intro.png)      |Mission briefing + agent name entry|
+|📧 Level 1   |![Level 1](Images/screenshot-level1.png)   |Phishing email simulation          |
+|💬 Level 2   |![Level 2](Images/screenshot-level2.png)   |WhatsApp scam chat UI              |
+|🔐 Level 3   |![Level 3](Images/screenshot-level3.png)   |Fake bank login page               |
+|😰 Level 4   |![Level 4](Images/screenshot-level4.png)   |Live vishing call simulation       |
+|🕸️ Level 5   |![Level 5](Images/screenshot-level5.png)   |Multi-vector recruitment scam      |
+|📊 Feedback  |![Feedback](Images/screenshot-feedback.png)|AI analysis + security tip         |
+|🏆 End Screen|![End](Images/screenshot-endscreen.png)    |Final score, badges & ending       |
 
 
-> 📸 *To add screenshots: take a screenshot of each screen, save them into the `/images` folder with the filenames above, then push to GitHub.*Add screenshots by placing images in a `/screenshots` folder and linking them here.*
+> 📸 *To add screenshots: take a screenshot of each screen, save them into the `/Images` folder with the filenames above, then push to GitHub.*Add screenshots by placing images in a `/screenshots` folder and linking them here.*
 
 -----
 
