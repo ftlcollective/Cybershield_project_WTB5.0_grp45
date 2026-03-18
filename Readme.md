@@ -148,7 +148,7 @@ The **Behavioural Analysis Engine (BAE)** is the core AI component. It analyses 
 git clone https://github.com/ftlcollective/Cybershield_project_WTB5.0_grp45.git
 
 # 2. Navigate into the project
-cd Cybershield_project_WTB5.0_grp45
+cd C:\Users\username\folder\cybershield 
 
 # 3. Install dependencies
 npm install
