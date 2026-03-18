@@ -1,10 +1,11 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/ftlcollective/Cybershield_project_WTB5.0_grp45/d6b20fee8fada94ed8352381fa677538936342a9/Images/IMG_1844.png" alt="Team Cyber Shield Logo" width="220" style="margin-bottom: 16px;"/>
-
 # 🛡️ CYBER SHIELD
 
 ### Human Firewall Challenge
+
+<img src="https://raw.githubusercontent.com/ftlcollective/Cybershield_project_WTB5.0_grp45/d6b20fee8fada94ed8352381fa677538936342a9/Images/IMG_1844.png" alt="Team Cyber Shield Logo" width="220"/>
+
 
 > **A behavioural cybersecurity training system that turns users into human firewalls through AI-powered scam simulation.**
 
@@ -48,7 +49,7 @@ Every decision is tracked by an AI-powered **Behavioural Analysis Engine** that 
 
 ## 🚨 Problem Statement
 
-- 💸 Cybercrime cost South Africa over **R2.2 billion** in 2023
+- 💸 Cybercrime costs Africa billions annually
 - 🧠 Over **70% of cyber attacks** exploit human behaviour, not technical vulnerabilities
 - 📚 Most cybersecurity training is **boring, passive, and forgettable**
 - 🎯 People learn best through **realistic, high-stakes experience**
@@ -71,7 +72,7 @@ Every decision is tracked by an AI-powered **Behavioural Analysis Engine** that 
 |----------------------|------------------------------------------------------|
 |❤️ **Trust Meter**     |Health system — drains on bad decisions, starts at 100|
 |⏱️ **Countdown Timer** |Per-level pressure timer (30–55 seconds)              |
-|💰 **Virtual Money**   |R50,000 at stake — wrong decisions cost real amounts  |
+|💰 **Virtual Money**   |$50,000 at stake — wrong decisions cost real amounts  |
 |🧠 **Behavioural AI**  |Real-time Human Risk Score + pattern classification   |
 |🏆 **Leaderboard**     |Score-ranked board based on trust, money & levels     |
 |🏅 **Badge System**    |5 achievement badges based on performance             |
@@ -114,10 +115,6 @@ The **Behavioural Analysis Engine (BAE)** is the core AI component. It analyses 
 
 ### What it tracks:
 
-```javascript
-BAE.record(level, choiceId, isCorrect, responseTimeMs, choiceType)
-```
-
 |Signal                |Weight  |Description                               |
 |----------------------|--------|------------------------------------------|
 |Wrong decision        |+20 risk|Base penalty per incorrect choice         |
@@ -127,19 +124,12 @@ BAE.record(level, choiceId, isCorrect, responseTimeMs, choiceType)
 
 ### Output:
 
-- **Human Risk Score** — 0 to 100 (lower = safer)
-- **Behavioural Archetype** — one of 4 classifications:
-
 |Score Range|Archetype                |
 |-----------|-------------------------|
 |0% wrong   |🛡️ Hyper-Vigilant         |
 |< 30% wrong|⚠️ Cautious but Vulnerable|
 |< 60% wrong|😟 Too Trusting           |
 |60%+ wrong |🚨 High Risk Behaviour    |
-
-### Why this matters:
-
-Traditional security training tells you *what* threats look like. The BAE tells you *why you’re vulnerable* — identifying whether you’re susceptible to authority figures, urgency tactics, or impulsive decision-making.
 
 -----
 
@@ -154,17 +144,9 @@ Traditional security training tells you *what* threats look like. The BAE tells 
 |**Custom BAE**       |AI behavioural analysis (pure JS)  |
 |**SVG**              |Animated circular timer ring       |
 
-
-> No external UI libraries. No backend required. Runs entirely in the browser.
-
 -----
 
 ## 🚀 Quick Start
-
-### Prerequisites
-
-- Node.js 16+
-- npm or yarn
 
 ### Installation
 
@@ -190,14 +172,12 @@ Open <http://localhost:3000> in your browser.
 npm run build
 ```
 
-### Deploy to Vercel (Recommended)
+### Deploy to Vercel
 
 ```bash
 npm install -g vercel
 vercel
 ```
-
-Or import directly at [vercel.com](https://vercel.com) from your GitHub repo.
 
 -----
 
@@ -216,7 +196,7 @@ Cybershield_project_WTB5.0_grp45/
 │   └── logo.png            ← Team Cyber Shield logo
 │
 ├── Images/
-│   ├── IMG_1844.png               ← Team Cyber Shield logo (original)
+│   ├── IMG_1844.png               ← Team Cyber Shield logo
 │   ├── screenshot-intro.png       ← Intro / home screen
 │   ├── screenshot-level1.png      ← Phishing email level
 │   ├── screenshot-level2.png      ← WhatsApp scam level
@@ -228,7 +208,7 @@ Cybershield_project_WTB5.0_grp45/
 │
 ├── .gitignore
 ├── package.json
-└── README.md               ← You are here
+└── README.md
 ```
 
 -----
@@ -247,21 +227,22 @@ Cybershield_project_WTB5.0_grp45/
 |🏆 End Screen|![End](Images/screenshot-endscreen.png)    |Final score, badges & ending       |
 
 
-> 📸 *To add screenshots: take a screenshot of each screen, save them into the `/Images` folder with the filenames above, then push to GitHub.*Add screenshots by placing images in a `/screenshots` folder and linking them here.*
+> 📸 *Add screenshots by saving images into the `/Images` folder and pushing to GitHub.*
 
 -----
 
 ## 👥 Team
 
-**Team Cyber Shield**
+**Team Cyber Shield** — Joint Effort 🤝
 
-|Role                |Name  |
-|--------------------|------|
-|🎯 Project Lead      |[Name]|
-|🎮 Game Designer     |[Name]|
-|💻 Frontend Developer|[Name]|
-|🧠 AI/Logic Developer|[Name]|
-|📄 Documentation     |[Name]|
+|Role                |Name              |
+|--------------------|------------------|
+|🎯 Project Lead      |Joint Effort      |
+|🎮 Game Designer     |Joint Effort      |
+|💻 Frontend Developer|Claude (Anthropic)|
+|🤖 AI/Logic Developer|Claude (Anthropic)|
+|📄 Documentation     |Joint Effort      |
+|🎨 UI/UX Design      |Joint Effort      |
 
 -----
 
@@ -273,7 +254,7 @@ This project is licensed under the **MIT License** — see the <LICENSE> file fo
 
 ## 🙏 Acknowledgements
 
-- Inspired by real cybercrime statistics from the **South African Banking Risk Information Centre (SABRIC)**
+- Inspired by real cybercrime statistics across **Africa**
 - Designed to support **UN Sustainable Development Goals 4, 10 & 16**
 - Built as a capstone project for **[Your Institution Name]**
 
