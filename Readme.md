@@ -264,6 +264,10 @@ This project was built using a **combination of AI tools, combined research, and
 
 ---
 
+## Submission Note — Version History
+
+This project was originally developed as a React application using Node.js and the react-scripts build toolchain (npm start / npm run build), with the component logic contained in src/App.js and bootstrapped via src/index.js. This version remains intact in the repository as the original development build and reflects the full React-based architecture as designed. For final submission purposes, the application was subsequently converted into a self-contained single-file HTML document (CyberShield.html), which bundles the React 18 runtime and Babel transpiler via CDN, eliminating the requirement for a local Node.js environment. All game logic, the Behavioural Analysis Engine, UI components, level scenarios, and documentation remain functionally identical between both versions. The self-contained HTML file can be opened directly in any modern browser or accessed via the GitHub Pages deployment link, and is designated as the final submission version.
+
 ## 🙏 Acknowledgements
 
 - Inspired by real cybercrime statistics across **Africa**
