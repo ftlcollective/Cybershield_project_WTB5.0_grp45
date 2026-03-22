@@ -21,7 +21,7 @@
 - [SDG Alignment](#-sdg-alignment)
 - [Game Features](#-game-features)
 - [Level Design](#-level-design)
-- [AI — Behavioural Analysis Engine](#-ai--behavioural-analysis-engine)
+- [AI ; Behavioural Analysis Engine](#-ai--behavioural-analysis-engine)
 - [Tech Stack](#-tech-stack)
 - [Quick Start](#-quick-start)
 - [Folder Structure](#-folder-structure)
@@ -33,7 +33,7 @@
 
 ## 🎯 About the Project
 
-**Cyber Shield: Human Firewall Challenge** is a gamified, escape-room-style cybersecurity training game. Players must survive 5 escalating cyber threats — from phishing emails to multi-step identity theft attacks.
+**Cyber Shield: Human Firewall Challenge** is a gamified, escape-room-style cybersecurity training game. Players must survive 5 escalating cyber threats ; from phishing emails to multi-step identity theft attacks.
 
 Every decision is tracked by an AI-powered **Behavioural Analysis Engine** that computes a personalised **Human Risk Score** and classifies the player's vulnerability pattern in real time.
 
@@ -64,9 +64,9 @@ Every decision is tracked by an AI-powered **Behavioural Analysis Engine** that 
 
 | Feature | Description |
 |--------|-------------|
-| ❤️ **Trust Meter** | Health system — drains on bad decisions, starts at 100 |
-| ⏱️ **Countdown Timer** | Per-level pressure timer (30–55 seconds) |
-| 💰 **Virtual Money** | $50,000 at stake — wrong decisions cost real amounts |
+| ❤️ **Trust Meter** | Health system ; drains on bad decisions, starts at 100 |
+| ⏱️ **Countdown Timer** | Per-level pressure timer (30;55 seconds) |
+| 💰 **Virtual Money** | $50,000 at stake ; wrong decisions cost real amounts |
 | 🧠 **Behavioural AI** | Real-time Human Risk Score + pattern classification |
 | 🏆 **Leaderboard** | Score-ranked board based on trust, money & levels |
 | 🏅 **Badge System** | 5 achievement badges based on performance |
@@ -81,18 +81,18 @@ Every decision is tracked by an AI-powered **Behavioural Analysis Engine** that 
 | 🛡️ Scam Survivor | Completed 3+ levels |
 | 😅 Too Trusting | Fell for 2+ scams |
 | 🔥 Human Firewall | Completed all levels with 70+ trust |
-| 💎 Cyber Master | Perfect run — no money lost |
+| 💎 Cyber Master | Perfect run ; no money lost |
 
 ---
 
 ## 🗺️ Level Design
 
 ```
-Level 1 — 📧 Phishing Email          (45 sec)
-Level 2 — 💬 Fake WhatsApp Scam      (35 sec)
-Level 3 — 🔐 Fake Login Page         (40 sec)
-Level 4 — 😰 Vishing Phone Call      (30 sec)
-Level 5 — 🕸️ Multi-Step Attack       (55 sec)
+Level 1 ; 📧 Phishing Email          (45 sec)
+Level 2 ; 💬 Fake WhatsApp Scam      (35 sec)
+Level 3 ; 🔐 Fake Login Page         (40 sec)
+Level 4 ; 😰 Vishing Phone Call      (30 sec)
+Level 5 ; 🕸️ Multi-Step Attack       (55 sec)
 ```
 
 Each level presents a **realistic scenario UI** (email client, WhatsApp chat, browser login, phone call) with multiple choices that affect:
@@ -102,7 +102,7 @@ Each level presents a **realistic scenario UI** (email client, WhatsApp chat, br
 
 ---
 
-## 🤖 AI — Behavioural Analysis Engine
+## 🤖 AI ; Behavioural Analysis Engine
 
 The **Behavioural Analysis Engine (BAE)** is the core AI component. It analyses player behaviour across all 5 levels.
 
@@ -225,46 +225,46 @@ Cybershield_project_WTB5.0_grp45/
 
 ## 👥 Team
 
-**Team Cyber Shield** — Joint Effort 🤝
+**Team Cyber Shield** ; Joint Effort 🤝
 
-ToolRole🤖 Claude (Anthropic)Primary development — frontend, AI engine, UI/UX💬 ChatGPT (OpenAI)Content, ideation, scam scenarios✨ Google GeminiResearch, validation, SDG alignment🔍 Google ResearchCybercrime statistics & real-world data
+ToolRole🤖 Claude (Anthropic)Primary development ; frontend, AI engine, UI/UX💬 ChatGPT (OpenAI)Content, ideation, scam scenarios✨ Google GeminiResearch, validation, SDG alignment🔍 Google ResearchCybercrime statistics & real-world data
 Plus a Combined AI + Human Intelligence callout at the bottom.
 
 ## 🤖 AI Tools & Research Methodology
 
-This project was built using a **combination of AI tools, combined research, and collaborative development** — each contributing a unique strength to the final product.
+This project was built using a **combination of AI tools, combined research, and collaborative development** ; each contributing a unique strength to the final product.
 
 | Tool | Role |
 |------|------|
-🤖 Claude — Primary dev
-💬 ChatGPT — Content & ideation
-✨ Gemini — Research & validation
-🔍 Google — Data & statistics 🛡️
+🤖 Claude ; Primary dev
+💬 ChatGPT ; Content & ideation
+✨ Gemini ; Research & validation
+🔍 Google ; Data & statistics 🛡️
 
 ---
 
 ## 📄 License
 
-This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **MIT License** ; see the [LICENSE](LICENSE) file for details.
 
 ---
 
 ## 🤖 AI Tools & Research Methodology
 
-This project was built using a **combination of AI tools, combined research, and collaborative development** — each contributing a unique strength to the final product.
+This project was built using a **combination of AI tools, combined research, and collaborative development** ; each contributing a unique strength to the final product.
 
 | Tool | Role |
 |------|------|
-| 🤖 **Claude (Anthropic)** | Primary development — frontend, game logic, Behavioural Analysis Engine, UI/UX design, documentation |
+| 🤖 **Claude (Anthropic)** | Primary development ; frontend, game logic, Behavioural Analysis Engine, UI/UX design, documentation |
 | 💬 **ChatGPT (OpenAI)** | Brainstorming scam scenarios, refining problem statements, drafting initial proposal content |
 | ✨ **Google Gemini** | Cross-referencing cybersecurity statistics, validating scam patterns, SDG alignment research |
 | 🔍 **Google Research** | Sourcing cybercrime statistics, real-world scam examples, and best practices in cybersecurity training |
 
-> 🤝 **Combined AI + Human Intelligence Approach** — Multiple AI tools were used collaboratively alongside team research and human insight, ensuring the platform is accurate, realistic, and impactful.
+> 🤝 **Combined AI + Human Intelligence Approach** ; Multiple AI tools were used collaboratively alongside team research and human insight, ensuring the platform is accurate, realistic, and impactful.
 
 ---
 
-## Submission Note — Version History
+## Submission Note ; Version History
 
 This project was originally developed as a React application using Node.js and the react-scripts build toolchain (npm start / npm run build), with the component logic contained in src/App.js and bootstrapped via src/index.js. This version remains intact in the repository as the original development build and reflects the full React-based architecture as designed. For final submission purposes, the application was subsequently converted into a self-contained single-file HTML document (CyberShield.html), which bundles the React 18 runtime and Babel transpiler via CDN, eliminating the requirement for a local Node.js environment. All game logic, the Behavioural Analysis Engine, UI components, level scenarios, and documentation remain functionally identical between both versions. The self-contained HTML file can be opened directly in any modern browser or accessed via the GitHub Pages deployment link, and is designated as the final submission version.
 
