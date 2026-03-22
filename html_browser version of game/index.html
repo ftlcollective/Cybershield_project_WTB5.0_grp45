@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#05060f" />
-  <meta name="description" content="Cyber Shield: Human Firewall Challenge ; AI-powered cybersecurity training" />
+  <meta name="description" content="Cyber Shield: Human Firewall Challenge, AI-powered cybersecurity training" />
   <title>Cyber Shield</title>
   <style>
     body { margin: 0; background: #05060f; }
@@ -73,13 +73,13 @@ const LEVELS = [
       contact: "MOM 👩‍👧", avatar: "👩",
       messages: [
         "Hi sweetheart, this is mom! I got a new number 😊",
-        "I'm in a real emergency. My car broke down ; I need $2,500 urgently.",
+        "I'm in a real emergency. My car broke down, I need $2,500 urgently.",
         "Please send to my new account. I'll explain later. PLEASE HURRY 🙏"
       ],
       flags: ["New number claim", "Urgent money request", "No call offered", "Emotional pressure"]
     },
     choices: [
-      { id:"a", text:"💸 Send $2,500 immediately ; it's Mom!", correct:false, type:"authority", trust:-30, money:-2500, fb:"💀 Not your mom! 'Hi Mum' scam ; fraudsters clone contacts. $2,500 gone." },
+      { id:"a", text:"💸 Send $2,500 immediately, it's Mom!", correct:false, type:"authority", trust:-30, money:-2500, fb:"💀 Not your mom! 'Hi Mum' scam, fraudsters clone contacts. $2,500 gone." },
       { id:"b", text:"📱 Call your real mom on her original number", correct:true, type:"safe", trust:20, money:0, fb:"✅ Perfect! Always verify by calling the person's known number first." },
       { id:"c", text:"💬 Ask a question only mom would know", correct:true, type:"safe", trust:15, money:0, fb:"✅ Good! Identity verification questions expose imposters immediately." },
       { id:"d", text:"💸 Send $500 as a test", correct:false, type:"urgency", trust:-15, money:-500, fb:"⚠️ Any amount sent to a scammer is lost. Never send without full verification." },
@@ -97,7 +97,7 @@ const LEVELS = [
     choices: [
       { id:"a", text:"🔑 Enter your username and password", correct:false, type:"authority", trust:-40, money:-8000, fb:"☠️ ACCOUNT DRAINED. Fake login pages steal credentials instantly. $8,000 gone." },
       { id:"b", text:"🔍 Check the URL carefully before typing", correct:true, type:"safe", trust:20, money:0, fb:"✅ Excellent! Always verify the full URL before entering any details." },
-      { id:"c", text:"🔒 It has a padlock so it's safe ; proceed", correct:false, type:"authority", trust:-35, money:-8000, fb:"💀 WRONG! HTTPS only encrypts the connection ; it does NOT verify the site is legitimate." },
+      { id:"c", text:"🔒 It has a padlock so it's safe, proceed", correct:false, type:"authority", trust:-35, money:-8000, fb:"💀 WRONG! HTTPS only encrypts the connection, it does NOT verify the site is legitimate." },
       { id:"d", text:"📲 Go directly to the official bank app", correct:true, type:"safe", trust:25, money:0, fb:"✅ Best practice! Always use official apps or type the URL directly." },
     ],
     tip: "A padlock 🔒 does NOT mean a site is safe. Criminals obtain SSL certificates too!"
@@ -108,7 +108,7 @@ const LEVELS = [
       caller: "Tax Authority", avatar: "🏛️",
       script: [
         "Good afternoon. This is Officer Johnson from the Tax Authority.",
-        "We have issued a warrant for your arrest ; unpaid tax fraud.",
+        "We have issued a warrant for your arrest, unpaid tax fraud.",
         "You owe $15,000. You have 30 MINUTES or police will be dispatched.",
         "To avoid arrest, purchase Google Play vouchers and read us the codes.",
         "This is your FINAL warning. Do not hang up."
@@ -118,7 +118,7 @@ const LEVELS = [
     choices: [
       { id:"a", text:"😱 Buy the vouchers immediately!", correct:false, type:"urgency", trust:-45, money:-15000, fb:"☠️ Classic vishing! Government NEVER demands gift cards. $15,000 scammed." },
       { id:"b", text:"📵 Hang up & call the tax authority directly", correct:true, type:"safe", trust:25, money:0, fb:"✅ Correct! This is vishing. Tax authorities never call demanding gift cards." },
-      { id:"c", text:"🤝 Negotiate ; ask for more time", correct:false, type:"urgency", trust:-20, money:0, fb:"⚠️ Engaging extends manipulation. Always hang up on scammers immediately." },
+      { id:"c", text:"🤝 Negotiate, ask for more time", correct:false, type:"urgency", trust:-20, money:0, fb:"⚠️ Engaging extends manipulation. Always hang up on scammers immediately." },
       { id:"d", text:"🔇 Put on hold, consult a family member", correct:true, type:"safe", trust:10, money:0, fb:"✅ Good instinct! Pausing breaks the scammer's psychological pressure." },
     ],
     tip: "Scammers use FEAR + URGENCY to bypass rational thinking. Slow down = stay safe."
@@ -127,19 +127,19 @@ const LEVELS = [
     id: 5, title: "🕸️ Level 5: Multi-Step Attack", type: "multi", timer: 55,
     sc: {
       steps: [
-        { phase: "Step 1 ; LinkedIn Message", color: "#00ff9c", msg: "Hi! I'm a recruiter at a top tech firm. Saw your profile ; we have an opening. Complete this quick skills test: [link]" },
-        { phase: "Step 2 ; Skills Test Site", color: "#facc15", msg: "The test site asks you to install a plugin. It requests access to your browser, camera, and files." },
-        { phase: "Step 3 ; Offer Letter", color: "#ff3b3b", msg: "Congratulations! You're hired! Fill in your ID, bank account, and tax number to process your first payment." }
+        { phase: "Step 1: LinkedIn Message", color: "#00ff9c", msg: "Hi! I'm a recruiter at a top tech firm. Saw your profile, we have an opening. Complete this quick skills test: [link]" },
+        { phase: "Step 2: Skills Test Site", color: "#facc15", msg: "The test site asks you to install a plugin. It requests access to your browser, camera, and files." },
+        { phase: "Step 3: Offer Letter", color: "#ff3b3b", msg: "Congratulations! You're hired! Fill in your ID, bank account, and tax number to process your first payment." }
       ],
       flags: ["Unsolicited recruiter contact", "Plugin install request", "Sensitive info collection", "Too-good-to-be-true offer"]
     },
     choices: [
-      { id:"a", text:"🎉 Complete all steps ; dream job!", correct:false, type:"authority", trust:-50, money:-20000, fb:"☠️ FULL IDENTITY THEFT. Bank, ID & device compromised. $20,000+ in damages." },
+      { id:"a", text:"🎉 Complete all steps, dream job!", correct:false, type:"authority", trust:-50, money:-20000, fb:"☠️ FULL IDENTITY THEFT. Bank, ID & device compromised. $20,000+ in damages." },
       { id:"b", text:"🔎 Verify on official company website & LinkedIn", correct:true, type:"safe", trust:30, money:0, fb:"✅ Smart! Legitimate recruiters use verified company emails. Check official portals." },
-      { id:"c", text:"⚠️ Do Step 1 only ; chat is harmless", correct:false, type:"urgency", trust:-15, money:0, fb:"⚠️ Multi-step scams build trust gradually. Even Step 1 exposes you." },
+      { id:"c", text:"⚠️ Do Step 1 only, chat is harmless", correct:false, type:"urgency", trust:-15, money:0, fb:"⚠️ Multi-step scams build trust gradually. Even Step 1 exposes you." },
       { id:"d", text:"🚫 Report on LinkedIn & block the account", correct:true, type:"safe", trust:25, money:0, fb:"✅ Perfect. Reporting protects others from this recruitment scam." },
     ],
-    tip: "Multi-step scams build TRUST before striking. If it feels too good ; it is."
+    tip: "Multi-step scams build TRUST before striking. If it feels too good, it is."
   }
 ];
 
@@ -148,7 +148,7 @@ const BADGES = [
   { id:"survivor", icon:"🛡️", name:"Scam Survivor",    desc:"Completed 3+ levels",               cond:s=>s.levelsCompleted>=3 },
   { id:"trusting", icon:"😅", name:"Too Trusting",     desc:"Fell for 2+ scams",                 cond:s=>s.wrongCount>=2 },
   { id:"firewall", icon:"🔥", name:"Human Firewall",   desc:"All levels with 70+ trust",         cond:s=>s.levelsCompleted===5&&s.trust>=70 },
-  { id:"master",   icon:"💎", name:"Cyber Master",     desc:"Perfect run ; no money lost",       cond:s=>s.levelsCompleted===5&&s.moneyLost===0 },
+  { id:"master",   icon:"💎", name:"Cyber Master",     desc:"Perfect run, no money lost",       cond:s=>s.levelsCompleted===5&&s.moneyLost===0 },
 ];
 
 const fmt = n => "$" + Number(n).toLocaleString();
@@ -449,7 +449,7 @@ function App() {
         {lv.type === "email" && (
           <Card className={shake ? "shake-anim" : ""} style={{ width: "100%", maxWidth: 640, padding: 0, overflow: "hidden" }}>
             <div style={{ background: "rgba(20,5,5,0.9)", borderBottom: "1px solid rgba(255,59,59,0.15)", padding: "10px 16px", display: "flex", gap: 8, alignItems: "center" }}>
-              <span>📧</span><span style={{ ...mono, fontSize: 10, color: "#ff3b3b", letterSpacing: 2 }}>INBOX ; SUSPICIOUS EMAIL</span>
+              <span>📧</span><span style={{ ...mono, fontSize: 10, color: "#ff3b3b", letterSpacing: 2 }}>INBOX: SUSPICIOUS EMAIL</span>
             </div>
             <div style={{ padding: 20 }}>
               <div style={{ padding: 14, background: "rgba(255,59,59,0.04)", borderRadius: 10, border: "1px solid rgba(255,59,59,0.12)", marginBottom: 14 }}>
@@ -559,7 +559,7 @@ function App() {
         <Card danger={!feedback?.correct} style={{ maxWidth: 560, width: "100%", padding: 28, textAlign: "center" }} className="fadeUp">
           <div style={{ fontSize: 60, marginBottom: 12, filter: "drop-shadow(0 0 14px " + (feedback?.correct ? "#00ff9c" : "#ff3b3b") + ")" }}>{feedback?.correct ? "✅" : "💀"}</div>
           <div style={{ ...mono, fontSize: 18, fontWeight: 700, marginBottom: 14, color: feedback?.correct ? "#00ff9c" : "#ff3b3b", textShadow: "0 0 14px " + (feedback?.correct ? "#00ff9c55" : "#ff3b3b55") }}>
-            {feedback?.correct ? "CORRECT DECISION" : "THREAT DETECTED ; TOO LATE"}
+            {feedback?.correct ? "CORRECT DECISION" : "THREAT DETECTED, TOO LATE"}
           </div>
           <div style={{ fontSize: 14, color: "#bbb", lineHeight: 1.75, marginBottom: 20 }}>{feedback?.text}</div>
           <div style={{ background: "rgba(0,255,156,0.04)", border: "1px solid rgba(0,255,156,0.12)", borderRadius: 12, padding: 16, textAlign: "left", marginBottom: 20 }}>
@@ -664,34 +664,34 @@ function App() {
     const content = {
       proposal: [
         ["Problem Statement","Cybercrime costs Africa billions annually. Over 70% of cyber attacks exploit human behaviour. Most people have never experienced a realistic scam simulation before becoming a victim."],
-        ["SDG Alignment","SDG 4 (Quality Education) ; Digital literacy training\nSDG 16 (Peace & Justice) ; Reducing cybercrime victimisation\nSDG 10 (Reduced Inequalities) ; Accessible cyber training for all"],
+        ["SDG Alignment","SDG 4 (Quality Education): Digital literacy training\nSDG 16 (Peace & Justice): Reducing cybercrime victimisation\nSDG 10 (Reduced Inequalities): Accessible cyber training for all"],
         ["Proposed Solution","Cyber Shield is a gamified, AI-powered cybersecurity training system. Players experience realistic scam simulations across 5 escalating levels. Every decision is tracked by the Behavioural Analysis Engine."],
-        ["AI Component","The Behavioural Analysis Engine tracks:\n• Decision accuracy per threat type\n• Response time (impulsive vs deliberate)\n• Bias patterns (authority, urgency, fear)\nOutput: Human Risk Score (0;100) + behavioural archetype."],
+        ["AI Component","The Behavioural Analysis Engine tracks:\n• Decision accuracy per threat type\n• Response time (impulsive vs deliberate)\n• Bias patterns (authority, urgency, fear)\nOutput: Human Risk Score (0 to 100) + behavioural archetype."],
         ["Team Roles","Joint Effort 🤝\n\nProject Lead: Joint Effort\nGame Designer: Joint Effort\nFrontend Developer: Claude (Anthropic)\nAI/Logic Developer: Claude (Anthropic)\nDocumentation: Joint Effort\nUI/UX Design: Joint Effort"],
       ],
       documentation: [
         ["System Overview","Cyber Shield is a browser-based cybersecurity escape room with 5 threat scenarios. Player decisions affect the Trust Meter, Virtual Money, and AI Risk Score in real time."],
-        ["Target Users","• Students (Grade 10 ; University)\n• Corporate employees\n• General public with limited cyber literacy\n• NGOs and community programmes across Africa"],
+        ["Target Users","• Students (Grade 10 to University)\n• Corporate employees\n• General public with limited cyber literacy\n• NGOs and community programmes across Africa"],
         ["Technology Stack","Frontend: React (JSX, Hooks)\nAI Engine: Behavioural Analysis Engine (JS)\nCurrency: Universal ($)\nHosting: Any static host (Netlify, Vercel)"],
-        ["AI Tools & Research","This project was built using a combination of AI tools and collaborative research:\n\n🤖 Claude (Anthropic) ; Primary development: frontend, game logic, Behavioural Analysis Engine, UI/UX design & documentation\n\n💬 ChatGPT (OpenAI) ; Brainstorming scam scenarios, refining problem statements & initial proposal content\n\n✨ Google Gemini ; Cross-referencing cybersecurity statistics, validating scam patterns & SDG alignment research\n\n🔍 Google Research ; Sourcing cybercrime statistics, real-world scam examples & best practices in cybersecurity training\n\n🤝 Combined AI + Human Intelligence approach ; ensuring the platform is accurate, realistic, and impactful."],
+        ["AI Tools & Research","This project was built using a combination of AI tools and collaborative research:\n\n🤖 Claude (Anthropic): Primary development: frontend, game logic, Behavioural Analysis Engine, UI/UX design & documentation\n\n💬 ChatGPT (OpenAI): Brainstorming scam scenarios, refining problem statements & initial proposal content\n\n✨ Google Gemini: Cross-referencing cybersecurity statistics, validating scam patterns & SDG alignment research\n\n🔍 Google Research: Sourcing cybercrime statistics, real-world scam examples & best practices in cybersecurity training\n\n🤝 Combined AI + Human Intelligence approach, ensuring the platform is accurate, realistic, and impactful."],
         ["AI Explanation","The BAE records each decision with timestamp, correctness, choice type, and latency. It computes weighted risk based on impulsivity, authority bias, and urgency susceptibility. Users are classified into 4 archetypes: Hyper-Vigilant, Cautious but Vulnerable, Too Trusting, High Risk."],
         ["Development Process","Phase 1: Game design & scenario scripting\nPhase 2: UI/UX design system\nPhase 3: Behavioural engine\nPhase 4: HUD, badges, leaderboard\nPhase 5: Testing & balancing\nPhase 6: Documentation"],
       ],
       presentation: [
-        ["Slide 1 ; Title","CYBER SHIELD: Human Firewall Challenge\nA Behavioural Cybersecurity Training System\nTeam Cyber Shield | Joint Effort | [Date]"],
-        ["Slide 2 ; Problem","• Cybercrime costs Africa billions annually\n• 70% of breaches involve human error\n• Most training is boring and forgettable\n• People learn through experience"],
-        ["Slide 3 ; Solution","An AI-powered cybersecurity game that:\n• Simulates real scam scenarios\n• Forces decisions under timer pressure\n• Tracks behaviour with AI analysis\n• Builds genuine cyber immunity"],
-        ["Slide 4 ; Live Demo","1. Show Level 1 phishing email\n2. Make a bad decision → consequences\n3. Trust Meter drops + AI risk updates\n4. Complete level → badge unlocks\n5. Show leaderboard"],
-        ["Slide 5 ; AI Component","Behavioural Analysis Engine:\n• Records every decision + response time\n• Detects authority bias & urgency susceptibility\n• Outputs Human Risk Score (0;100)\n• Classifies behavioural archetype"],
-        ["Slide 6 ; SDG Impact","SDG 4: Digital literacy for all\nSDG 16: Reducing cybercrime across Africa\nTarget: Students, employees, communities\nScalable: Any device, no installation"],
-        ["Slide 7 ; Roadmap","• Real-time AI via Claude API\n• Multiplayer mode\n• School curriculum package\n• Certificate system\n• Mobile app"],
-        ["Slide 8 ; Close","Every person who plays Cyber Shield becomes a Human Firewall.\n[GitHub] | [Demo URL] | [QR Code]"],
+        ["Slide 1: Title","CYBER SHIELD: Human Firewall Challenge\nA Behavioural Cybersecurity Training System\nTeam Cyber Shield | Joint Effort | [Date]"],
+        ["Slide 2: Problem","• Cybercrime costs Africa billions annually\n• 70% of breaches involve human error\n• Most training is boring and forgettable\n• People learn through experience"],
+        ["Slide 3: Solution","An AI-powered cybersecurity game that:\n• Simulates real scam scenarios\n• Forces decisions under timer pressure\n• Tracks behaviour with AI analysis\n• Builds genuine cyber immunity"],
+        ["Slide 4: Live Demo","1. Show Level 1 phishing email\n2. Make a bad decision → consequences\n3. Trust Meter drops + AI risk updates\n4. Complete level → badge unlocks\n5. Show leaderboard"],
+        ["Slide 5: AI Component","Behavioural Analysis Engine:\n• Records every decision + response time\n• Detects authority bias & urgency susceptibility\n• Outputs Human Risk Score (0 to 100)\n• Classifies behavioural archetype"],
+        ["Slide 6: SDG Impact","SDG 4: Digital literacy for all\nSDG 16: Reducing cybercrime across Africa\nTarget: Students, employees, communities\nScalable: Any device, no installation"],
+        ["Slide 7: Roadmap","• Real-time AI via Claude API\n• Multiplayer mode\n• School curriculum package\n• Certificate system\n• Mobile app"],
+        ["Slide 8: Close","Every person who plays Cyber Shield becomes a Human Firewall.\n[GitHub] | [Demo URL] | [QR Code]"],
       ],
       script: [
-        ["Speaker 1 ; Intro (60s)","\"Cybercrime costs Africa billions every year ; mostly because of human error, not tech failures. We built Cyber Shield: the Human Firewall Challenge ; a gamified, AI-powered system that teaches people to recognise scams by safely experiencing them.\""],
-        ["Speaker 2 ; Demo (90s)","\"Let me show you. I'll launch the game. [Start Level 1] ; I've received an urgent email. Look at the sender domain ; it's fake. I click the link ; Trust meter drops, money stolen, AI logs my impulsive decision.\""],
-        ["Speaker 3 ; AI (60s)","\"Behind every decision is our Behavioural Analysis Engine. It tracks how fast you decide, whether you're influenced by authority or urgency, and builds a Human Risk Score across 5 levels. It tells you exactly how vulnerable you are ; and why.\""],
-        ["Speaker 4 ; Close (60s)","\"Cyber Shield works on any device, requires no installation, and can be deployed in schools and workplaces immediately. Our vision: make cyber immunity universal across Africa. Thank you.\""],
+        ["Speaker 1: Intro (60s)","\"Cybercrime costs Africa billions every year, mostly because of human error, not tech failures. We built Cyber Shield: the Human Firewall Challenge, a gamified, AI-powered system that teaches people to recognise scams by safely experiencing them.\""],
+        ["Speaker 2: Demo (90s)","\"Let me show you. I'll launch the game. [Start Level 1], I've received an urgent email. Look at the sender domain, it's fake. I click the link, Trust meter drops, money stolen, AI logs my impulsive decision.\""],
+        ["Speaker 3: AI (60s)","\"Behind every decision is our Behavioural Analysis Engine. It tracks how fast you decide, whether you're influenced by authority or urgency, and builds a Human Risk Score across 5 levels. It tells you exactly how vulnerable you are, and why.\""],
+        ["Speaker 4: Close (60s)","\"Cyber Shield works on any device, requires no installation, and can be deployed in schools and workplaces immediately. Our vision: make cyber immunity universal across Africa. Thank you.\""],
       ]
     };
     return (
