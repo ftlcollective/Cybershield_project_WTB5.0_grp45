@@ -8,150 +8,6 @@
   <title>Cyber Shield</title>
   <style>
     body { margin: 0; background: #05060f; }
-    /* ═══════════════════════════════════════
-       RESPONSIVE / MOBILE STYLES
-       Works on all screen sizes automatically
-    ═══════════════════════════════════════ */
-
-    * { box-sizing: border-box; }
-
-    /* Smooth scrolling & tap improvements */
-    html { -webkit-text-size-adjust: 100%; }
-    body { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
-
-    /* ── HUD ── */
-    .hud-outer {
-      padding: 8px 14px !important;
-      gap: 10px !important;
-      flex-wrap: wrap !important;
-    }
-    .hud-stats-row {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    /* ── CHOICE BUTTONS ── */
-    .choice-btn {
-      min-height: 48px;
-      touch-action: manipulation;
-    }
-
-    /* ── FLAGS ── */
-    .flag-chip { touch-action: manipulation; }
-
-    /* ── TABLET (max 768px) ── */
-    @media (max-width: 768px) {
-      .hud-outer { padding: 8px 12px !important; gap: 8px !important; }
-      .hud-trust { min-width: 140px !important; }
-      .intro-logo-wrap { width: 150px !important; height: 150px !important; }
-      .intro-title-text { font-size: 26px !important; }
-    }
-
-    /* ── MOBILE (max 480px) ── */
-    @media (max-width: 480px) {
-      /* HUD becomes 2 rows */
-      .hud-outer {
-        padding: 8px 10px !important;
-        gap: 6px !important;
-        row-gap: 6px !important;
-      }
-      .hud-brand { flex-shrink: 0; }
-      .hud-brand span { font-size: 11px !important; }
-      .hud-trust {
-        order: 10;
-        flex: 1 1 100% !important;
-        min-width: 0 !important;
-      }
-      .hud-stat { min-width: 42px !important; }
-      .hud-stat-val { font-size: 12px !important; }
-      .hud-btn { padding: 5px 8px !important; font-size: 11px !important; }
-
-      /* Intro */
-      .intro-logo-wrap { width: 120px !important; height: 120px !important; }
-      .intro-title-text { font-size: 22px !important; letter-spacing: 2px !important; }
-      .intro-subtitle { font-size: 10px !important; letter-spacing: 2px !important; }
-      .intro-card { padding: 16px !important; }
-      .intro-kv-label { font-size: 11px !important; min-width: 100px !important; }
-      .intro-kv-val { font-size: 11px !important; }
-      .intro-wrap { padding: 0 10px !important; gap: 14px !important; }
-
-      /* Game level header */
-      .level-header { gap: 10px !important; }
-      .level-title-text { font-size: 14px !important; }
-
-      /* Timer ring smaller */
-      .timer-ring-wrap { width: 58px !important; height: 58px !important; }
-      .timer-svg { width: 58px !important; height: 58px !important; }
-      .timer-num { font-size: 15px !important; }
-
-      /* Cards */
-      .game-card-pad { padding: 14px !important; }
-      .email-card-inner { padding: 14px !important; }
-      .email-from { font-size: 10px !important; }
-      .email-subject { font-size: 12px !important; }
-      .email-body { font-size: 12px !important; line-height: 1.6 !important; }
-
-      /* Login URL bar truncates */
-      .url-bar-text {
-        font-size: 9px !important;
-        overflow: hidden !important;
-        text-overflow: ellipsis !important;
-        white-space: nowrap !important;
-        max-width: calc(100vw - 100px) !important;
-      }
-      .login-inner { padding: 18px 14px !important; }
-      .login-inner input { font-size: 13px !important; padding: 9px 10px !important; }
-
-      /* Choice buttons - big touch targets */
-      .choice-btn {
-        padding: 13px 14px !important;
-        font-size: 13px !important;
-        min-height: 52px !important;
-        line-height: 1.4 !important;
-      }
-
-      /* Feedback */
-      .feedback-icon { font-size: 48px !important; }
-      .feedback-title { font-size: 15px !important; }
-      .feedback-body { font-size: 13px !important; }
-      .feedback-card { padding: 18px !important; }
-      .feedback-stats { gap: 6px !important; }
-      .feedback-stat-val { font-size: 15px !important; }
-
-      /* End screen - 2 col grid */
-      .end-emoji { font-size: 58px !important; }
-      .end-title { font-size: 20px !important; letter-spacing: 1px !important; }
-      .end-grid { grid-template-columns: repeat(2,1fr) !important; gap: 6px !important; }
-      .end-card { padding: 18px !important; }
-      .end-stat-val { font-size: 11px !important; }
-      .end-actions { flex-direction: column !important; }
-      .end-actions > * { width: 100% !important; }
-
-      /* Leaderboard */
-      .board-card { padding: 14px !important; }
-      .board-name { font-size: 13px !important; }
-      .board-sub { font-size: 10px !important; }
-      .board-score { font-size: 14px !important; }
-
-      /* Center padding */
-      .center-wrap { padding: 12px !important; gap: 10px !important; }
-
-      /* Social/multi card */
-      .social-card { padding: 14px !important; }
-      .script-line { font-size: 12px !important; padding: 6px 10px !important; }
-      .step-card { padding: 10px !important; }
-      .step-text { font-size: 12px !important; }
-    }
-
-    /* ── SMALL PHONE (max 360px) ── */
-    @media (max-width: 360px) {
-      .intro-title-text { font-size: 19px !important; }
-      .hud-stat-val { font-size: 11px !important; }
-      .choice-btn { font-size: 12px !important; }
-    }
-
   </style>
   <!-- React 18 + Babel (standalone ; no Node.js needed) -->
   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
@@ -313,15 +169,15 @@ function TimerRing({ value, max }) {
   const offset = circ * (1 - (max > 0 ? value / max : 0));
   const color = value <= 10 ? "#ff3b3b" : value <= 20 ? "#facc15" : "#00ff9c";
   return (
-    <div className="timer-ring-wrap" style={{ position: "relative", width: 76, height: 76, flexShrink: 0 }}>
-      <svg className="timer-svg" width="76" height="76" style={{ transform: "rotate(-90deg)" }}>
+    <div style={{ position: "relative", width: 76, height: 76, flexShrink: 0 }}>
+      <svg width="76" height="76" style={{ transform: "rotate(-90deg)" }}>
         <circle cx="38" cy="38" r={r} fill="none" stroke="rgba(255,255,255,0.06)" strokeWidth="6" />
         <circle cx="38" cy="38" r={r} fill="none" stroke={color} strokeWidth="6"
           strokeDasharray={circ} strokeDashoffset={offset} strokeLinecap="round"
           style={{ transition: "stroke-dashoffset 1s linear, stroke 0.4s", filter: "drop-shadow(0 0 5px " + color + ")" }} />
       </svg>
       <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
-        <span className="timer-num" style={{ fontFamily: "monospace", fontSize: 17, fontWeight: 700, color, lineHeight: 1 }}>{value}</span>
+        <span style={{ fontFamily: "monospace", fontSize: 17, fontWeight: 700, color, lineHeight: 1 }}>{value}</span>
         <span style={{ fontSize: 9, color: "#555", letterSpacing: 1 }}>SEC</span>
       </div>
     </div>
@@ -347,7 +203,7 @@ function HUD({ trust, money, riskScore, level, badges, onBoard, onReset }) {
   const rColor = riskScore > 60 ? "#ff3b3b" : riskScore > 30 ? "#facc15" : "#00ff9c";
   const [imgErr, setImgErr] = useState(false);
   return (
-    <div className="hud-outer" style={{ background: "rgba(5,6,15,0.92)", borderBottom: "1px solid rgba(0,255,156,0.1)", backdropFilter: "blur(16px)", padding: "10px 20px", display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap", position: "sticky", top: 0, zIndex: 100 }}>
+    <div style={{ background: "rgba(5,6,15,0.92)", borderBottom: "1px solid rgba(0,255,156,0.1)", backdropFilter: "blur(16px)", padding: "10px 20px", display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap", position: "sticky", top: 0, zIndex: 100 }}>
       <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
         {imgErr
           ? <span style={{ fontSize: 20 }}>🛡️</span>
@@ -355,17 +211,17 @@ function HUD({ trust, money, riskScore, level, badges, onBoard, onReset }) {
         }
         <span style={{ fontFamily: "monospace", fontSize: 13, color: "#00c8ff", letterSpacing: 1, fontWeight: 700 }}>CYBER SHIELD</span>
       </div>
-      <div className="hud-trust" style={{ flex: "1 1 200px" }}><TrustBar value={trust} /></div>
-      {[["💰", fmt(money), "#00ff9c"], ["🧠", riskScore, rColor], ["📊", (level + 1) + "/5", "#a78bfa"]].map(([icon, val, col]) => (<>
-        <div key={icon} className="hud-stat" style={{ textAlign: "center", minWidth: 52 }}>
+      <div style={{ flex: "1 1 200px" }}><TrustBar value={trust} /></div>
+      {[["💰", fmt(money), "#00ff9c"], ["🧠", riskScore, rColor], ["📊", (level + 1) + "/5", "#a78bfa"]].map(([icon, val, col]) => (
+        <div key={icon} style={{ textAlign: "center", minWidth: 52 }}>
           <div style={{ fontSize: 9, color: "#444", letterSpacing: 1, textTransform: "uppercase", marginBottom: 2 }}>{icon}</div>
-          <div className="hud-stat-val" style={{ fontFamily: "monospace", fontSize: 14, color: col, fontWeight: 700 }}>{val}</div>
-        </div></>
+          <div style={{ fontFamily: "monospace", fontSize: 14, color: col, fontWeight: 700 }}>{val}</div>
+        </div>
       ))}
       {badges.length > 0 && <div style={{ display: "flex", gap: 4 }}>{badges.map(b => <span key={b.id} title={b.name} style={{ fontSize: 15 }}>{b.icon}</span>)}</div>}
       <div style={{ marginLeft: "auto", display: "flex", gap: 6 }}>
         {[["🏆", onBoard], ["↩", onReset]].map(([t, fn]) => (
-          <button key={t} className="hud-btn" onClick={fn} style={{ padding: "6px 12px", borderRadius: 18, border: "1px solid rgba(0,255,156,0.25)", background: "transparent", color: "#7fcfaa", cursor: "pointer", fontSize: 12, fontWeight: 600 }}>{t}</button>
+          <button key={t} onClick={fn} style={{ padding: "6px 12px", borderRadius: 18, border: "1px solid rgba(0,255,156,0.25)", background: "transparent", color: "#7fcfaa", cursor: "pointer", fontSize: 12, fontWeight: 600 }}>{t}</button>
         ))}
       </div>
     </div>
@@ -375,17 +231,16 @@ function HUD({ trust, money, riskScore, level, badges, onBoard, onReset }) {
 function Flags({ flags }) {
   return (
     <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 14 }}>
-      {flags.map(f => <span key={f} className="flag-chip" style={{ padding: "3px 10px", borderRadius: 20, fontSize: 11, fontWeight: 600, border: "1px solid rgba(255,59,59,0.4)", color: "#ff3b3b", background: "rgba(255,59,59,0.07)" }}>🚩 {f}</span>)}
+      {flags.map(f => <span key={f} style={{ padding: "3px 10px", borderRadius: 20, fontSize: 11, fontWeight: 600, border: "1px solid rgba(255,59,59,0.4)", color: "#ff3b3b", background: "rgba(255,59,59,0.07)" }}>🚩 {f}</span>)}
     </div>
   );
 }
 
 function ChoiceBtn({ choice, onChoose }) {
   const [hover, setHover] = useState(false);
-  const safe = choice.correct || choice.type === "safe";
   return (
     <button onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} onClick={() => onChoose(choice)}
-      className="choice-btn" style={{ width: "100%", textAlign: "left", padding: "12px 16px", border: "1px solid " + (hover ? (safe ? "rgba(0,255,156,0.7)" : "rgba(255,59,59,0.7)") : (safe ? "rgba(0,255,156,0.2)" : "rgba(255,59,59,0.25)")), borderRadius: 12, background: hover ? (safe ? "rgba(0,255,156,0.08)" : "rgba(255,59,59,0.08)") : (safe ? "rgba(0,255,156,0.03)" : "rgba(255,59,59,0.04)"), color: safe ? "#c8f0e0" : "#f8d0d0", fontFamily: "'Inter',sans-serif", fontSize: 13.5, fontWeight: 500, cursor: "pointer", marginBottom: 8, transform: hover ? "translateX(4px)" : "translateX(0)", transition: "all 0.18s", boxShadow: hover ? ("0 0 12px " + (safe ? "rgba(0,255,156,0.15)" : "rgba(255,59,59,0.15)")) : "none" }}>
+      className="choice-btn" style={{ width: "100%", textAlign: "left", padding: "12px 16px", border: "1px solid " + (hover ? "rgba(180,190,210,0.5)" : "rgba(140,155,180,0.2)"), borderRadius: 12, background: hover ? "rgba(255,255,255,0.07)" : "rgba(255,255,255,0.03)", color: "#c8d0dc", fontFamily: "'Inter',sans-serif", fontSize: 13.5, fontWeight: 500, cursor: "pointer", marginBottom: 8, transform: hover ? "translateX(4px)" : "translateX(0)", transition: "all 0.18s", boxShadow: hover ? "0 0 12px rgba(180,190,210,0.12)" : "none" }}>
       {choice.text}
     </button>
   );
@@ -420,7 +275,7 @@ function PrimaryBtn({ children, onClick, danger }) {
 function LogoImage({ size = 160 }) {
   const [err, setErr] = useState(false);
   return (
-    <div className="intro-logo-wrap" style={{ width: size, height: size, borderRadius: 24, padding: 4, background: "linear-gradient(135deg, rgba(0,200,255,0.4), rgba(168,85,247,0.4))", boxShadow: "0 0 30px rgba(0,200,255,0.35), 0 0 60px rgba(168,85,247,0.2)" }} className="logo-glow">
+    <div style={{ width: size, height: size, borderRadius: 24, padding: 4, background: "linear-gradient(135deg, rgba(0,200,255,0.4), rgba(168,85,247,0.4))", boxShadow: "0 0 30px rgba(0,200,255,0.35), 0 0 60px rgba(168,85,247,0.2)" }} className="logo-glow">
       {err
         ? <div style={{ width: "100%", height: "100%", borderRadius: 20, background: "linear-gradient(135deg,#0a1628,#1a0a2e)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: size * 0.45 }}>🛡️</div>
         : <img src={LOGO_SRC} onError={() => setErr(true)} style={{ width: "100%", height: "100%", objectFit: "contain", borderRadius: 20, display: "block" }} alt="Team Cyber Shield" />
@@ -542,22 +397,22 @@ function App() {
 
   const hudProps = { trust, money, riskScore: risk, level, badges, onBoard: () => setScreen("leaderboard"), onReset: resetGame };
   const base = { minHeight: "100vh", background: "#05060f", color: "#eaeaea", fontFamily: "'Inter',sans-serif", display: "flex", flexDirection: "column" };
-  const center = { flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "flex-start", paddingTop: 16, paddingBottom: 20, paddingLeft: 14, paddingRight: 14, gap: 12 };
+  const center = { flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: 24, gap: 16 };
   const mono = { fontFamily: "monospace" };
 
   // ── INTRO ─────────────────────────────────────────────────────────────────
   if (screen === "intro") return (
     <div style={{ ...base, alignItems: "center", justifyContent: "center" }}>
       <BG />
-      <div className="fadeUp" className="intro-wrap" style={{ maxWidth: 540, width: "100%", display: "flex", flexDirection: "column", alignItems: "center", gap: 20, padding: "0 20px" }}>
+      <div className="fadeUp" style={{ maxWidth: 540, width: "100%", display: "flex", flexDirection: "column", alignItems: "center", gap: 20, padding: "0 20px" }}>
         <div style={{ textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}>
           <LogoImage size={180} />
           <div style={{ fontSize: 11, color: "#7b8cff", letterSpacing: 4, textTransform: "uppercase", fontWeight: 600, marginTop: 8 }}>TEAM</div>
-          <div className="intro-title-text" style={{ fontFamily: "monospace", fontSize: 30, fontWeight: 700, letterSpacing: 3, background: "linear-gradient(90deg,#00c8ff,#a855f7)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>CYBER SHIELD</div>
+          <div style={{ ...mono, fontSize: 30, fontWeight: 700, letterSpacing: 3, background: "linear-gradient(90deg,#00c8ff,#a855f7)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>CYBER SHIELD</div>
           <div style={{ fontSize: 12, color: "#a78bfa", letterSpacing: 3, textTransform: "uppercase" }}>Human Firewall Challenge</div>
           <div style={{ fontSize: 12, color: "#444", marginTop: 4 }}>A behavioural cybersecurity training system powered by AI.</div>
         </div>
-        <Card className="intro-card" style={{ width: "100%", padding: 24 }}>
+        <Card style={{ width: "100%", padding: 24 }}>
           <div style={{ ...mono, fontSize: 10, color: "#00ff9c66", letterSpacing: 2, marginBottom: 12 }}>// MISSION BRIEFING</div>
           {[["❤️ Trust Meter","Starts at 100. Wrong decisions drain it."],["💰 Virtual Money","$50,000 at stake. Every wrong call has a price."],["⏱️ Countdown","Pressure-timed levels mirror real scams."],["🧠 Behavioural AI","Every decision is analysed for your Risk Score."],["🏅 Badges","Earn achievements based on your cyber instincts."]].map(([k, v]) => (
             <div key={k} style={{ display: "flex", gap: 12, marginBottom: 10 }}>
@@ -594,7 +449,7 @@ function App() {
             <div style={{ background: "rgba(20,5,5,0.9)", borderBottom: "1px solid rgba(255,59,59,0.15)", padding: "10px 16px", display: "flex", gap: 8, alignItems: "center" }}>
               <span>📧</span><span style={{ ...mono, fontSize: 10, color: "#ff3b3b", letterSpacing: 2 }}>INBOX: SUSPICIOUS EMAIL</span>
             </div>
-            <div className="email-card-inner" style={{ padding: 20 }}>
+            <div style={{ padding: 20 }}>
               <div style={{ padding: 14, background: "rgba(255,59,59,0.04)", borderRadius: 10, border: "1px solid rgba(255,59,59,0.12)", marginBottom: 14 }}>
                 <div style={{ fontSize: 12, marginBottom: 4 }}><span style={{ color: "#555" }}>From: </span><span style={{ color: "#facc15", ...mono }}>{lv.sc.from}</span></div>
                 <div style={{ fontSize: 13, fontWeight: 600, marginBottom: 12 }}>{lv.sc.subject}</div>
@@ -638,9 +493,9 @@ function App() {
             <div style={{ borderRadius: "14px 14px 0 0", overflow: "hidden", border: "1px solid rgba(0,255,156,0.1)" }}>
               <div style={{ background: "#1e1e2e", padding: "8px 12px", display: "flex", alignItems: "center", gap: 8 }}>
                 <div style={{ display: "flex", gap: 5 }}>{["#ff5f57","#febc2e","#28c840"].map(c => <div key={c} style={{ width: 11, height: 11, borderRadius: "50%", background: c }} />)}</div>
-                <div className="url-bar-text" style={{ flex: 1, background: "rgba(255,255,255,0.06)", borderRadius: 6, padding: "4px 10px", fontSize: 11, fontFamily: "monospace", color: "#facc15", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>🔒 {lv.sc.url}</div>
+                <div style={{ flex: 1, background: "rgba(255,255,255,0.06)", borderRadius: 6, padding: "4px 10px", fontSize: 11, ...mono, color: "#facc15" }}>🔒 {lv.sc.url}</div>
               </div>
-              <div className="login-inner" style={{ background: "#f8f9fa", padding: 28, textAlign: "center" }}>
+              <div style={{ background: "#f8f9fa", padding: 28, textAlign: "center" }}>
                 <div style={{ fontSize: 34, marginBottom: 8 }}>🏦</div>
                 <div style={{ color: "#1a1a3e", fontWeight: 700, fontSize: 16, marginBottom: 4 }}>{lv.sc.siteName}</div>
                 <div style={{ color: "#888", fontSize: 12, marginBottom: 16 }}>Secure Customer Login</div>
@@ -666,7 +521,7 @@ function App() {
                   <div style={{ marginLeft: "auto", padding: "3px 10px", background: "#ff3b3b22", borderRadius: 20, color: "#ff3b3b", fontSize: 10, border: "1px solid #ff3b3b44" }}>LIVE</div>
                 </div>
                 {lv.sc.script.map((s, i) => (
-                  <div key={i} className="script-line" style={{ padding: "8px 12px", background: "rgba(255,255,255,0.03)", borderRadius: 8, marginBottom: 6, fontSize: 13, color: "#ccc", borderLeft: "3px solid #facc15", fontStyle: "italic" }}>
+                  <div key={i} style={{ padding: "8px 12px", background: "rgba(255,255,255,0.03)", borderRadius: 8, marginBottom: 6, fontSize: 13, color: "#ccc", borderLeft: "3px solid #facc15", fontStyle: "italic" }}>
                     "{i === lv.sc.script.length - 1 ? <TypingText text={s} speed={20} /> : s}"
                   </div>
                 ))}
@@ -675,7 +530,7 @@ function App() {
               <div>
                 <div style={{ ...mono, fontSize: 11, color: "#a78bfa", letterSpacing: 2, marginBottom: 12 }}>⚡ MULTI-VECTOR ATTACK SEQUENCE</div>
                 {lv.sc.steps.map((s, i) => (
-                  <div key={i} className="step-card" style={{ padding: 12, background: "rgba(255,255,255,0.02)", borderRadius: 10, marginBottom: 10, borderLeft: "3px solid " + s.color }}>
+                  <div key={i} style={{ padding: 12, background: "rgba(255,255,255,0.02)", borderRadius: 10, marginBottom: 10, borderLeft: "3px solid " + s.color }}>
                     <div style={{ color: s.color, fontSize: 11, fontWeight: 700, letterSpacing: 1, marginBottom: 4 }}>{s.phase}</div>
                     <div style={{ fontSize: 13, color: "#bbb" }}>{i === lv.sc.steps.length - 1 ? <TypingText text={s.msg} speed={18} /> : s.msg}</div>
                   </div>
@@ -699,9 +554,9 @@ function App() {
       <BG />
       <HUD {...hudProps} />
       <div style={center}>
-        <Card danger={!feedback?.correct} className="feedback-card fadeUp" style={{ maxWidth: 560, width: "100%", padding: 28, textAlign: "center" }}>
+        <Card danger={!feedback?.correct} style={{ maxWidth: 560, width: "100%", padding: 28, textAlign: "center" }} className="fadeUp">
           <div style={{ fontSize: 60, marginBottom: 12, filter: "drop-shadow(0 0 14px " + (feedback?.correct ? "#00ff9c" : "#ff3b3b") + ")" }}>{feedback?.correct ? "✅" : "💀"}</div>
-          <div className="feedback-title" style={{ fontFamily: "monospace", fontSize: 18, fontWeight: 700, marginBottom: 14, color: feedback?.correct ? "#00ff9c" : "#ff3b3b", textShadow: "0 0 14px " + (feedback?.correct ? "#00ff9c55" : "#ff3b3b55") }}>
+          <div style={{ ...mono, fontSize: 18, fontWeight: 700, marginBottom: 14, color: feedback?.correct ? "#00ff9c" : "#ff3b3b", textShadow: "0 0 14px " + (feedback?.correct ? "#00ff9c55" : "#ff3b3b55") }}>
             {feedback?.correct ? "CORRECT DECISION" : "THREAT DETECTED, TOO LATE"}
           </div>
           <div style={{ fontSize: 14, color: "#bbb", lineHeight: 1.75, marginBottom: 20 }}>{feedback?.text}</div>
@@ -709,7 +564,7 @@ function App() {
             <div style={{ ...mono, fontSize: 10, color: "#00ff9c", letterSpacing: 2, marginBottom: 8 }}>// SECURITY INSIGHT</div>
             <div style={{ fontSize: 13, color: "#999", lineHeight: 1.6 }}>{lv?.tip}</div>
           </div>
-          <div className="end-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 10, marginBottom: 20 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 10, marginBottom: 20 }}>
             {[["Trust", trust, trust > 60 ? "#00ff9c" : trust > 30 ? "#facc15" : "#ff3b3b"], ["Money", fmt(money), "#00ff9c"], ["Risk", risk, risk > 60 ? "#ff3b3b" : "#facc15"]].map(([l, v, c]) => (
               <div key={l} style={{ background: "rgba(255,255,255,0.03)", borderRadius: 10, padding: 12 }}>
                 <div style={{ fontSize: 9, color: "#444", letterSpacing: 1, textTransform: "uppercase", marginBottom: 4 }}>{l}</div>
@@ -741,7 +596,7 @@ function App() {
         <BG />
         <div className="fadeUp" style={{ maxWidth: 580, width: "100%", display: "flex", flexDirection: "column", alignItems: "center", gap: 20, padding: "0 20px" }}>
           <div style={{ fontSize: 76, filter: "drop-shadow(0 0 22px " + ec + ")", textAlign: "center" }}>{perfect ? "💎" : win ? "🛡️" : "😭"}</div>
-          <div className="end-title" style={{ fontFamily: "monospace", fontSize: 26, fontWeight: 700, color: ec, textShadow: "0 0 18px " + ec + "66", letterSpacing: 2, textAlign: "center" }}>{perfect ? "CYBER MASTER" : win ? "HUMAN FIREWALL" : "DIGITALLY BANKRUPT"}</div>
+          <div style={{ ...mono, fontSize: 26, fontWeight: 700, color: ec, textShadow: "0 0 18px " + ec + "66", letterSpacing: 2, textAlign: "center" }}>{perfect ? "CYBER MASTER" : win ? "HUMAN FIREWALL" : "DIGITALLY BANKRUPT"}</div>
           <div style={{ color: "#777", textAlign: "center", fontSize: 13, maxWidth: 420, lineHeight: 1.7 }}>
             {perfect ? "Flawless run. Every scam identified, zero money lost. You are an elite cyber defender." : win ? "You survived the gauntlet and built real cyber immunity. Stay vigilant." : "You fell for too many scams. Identity compromised, finances drained. Learn from this."}
           </div>
@@ -762,7 +617,7 @@ function App() {
                 </div>
               </div>
             )}
-            <div className="end-actions" style={{ display: "flex", gap: 10 }}>
+            <div style={{ display: "flex", gap: 10 }}>
               <div style={{ flex: 1 }}><PrimaryBtn onClick={resetGame}>🔄 Play Again</PrimaryBtn></div>
               <button onClick={() => setScreen("leaderboard")} style={{ flex: 1, padding: 13, borderRadius: 12, border: "1px solid rgba(167,139,250,0.3)", background: "rgba(167,139,250,0.06)", color: "#a78bfa", fontSize: 14, fontWeight: 700, cursor: "pointer" }}>🏆 Leaderboard</button>
             </div>
