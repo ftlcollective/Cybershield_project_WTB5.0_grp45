@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#05060f" />
+  <meta name="description" content="Cyber Shield: Human Firewall Challenge, AI-powered cybersecurity training" />
+  <title>Cyber Shield</title>
+  <style>
+    body { margin: 0; background: #05060f; }
+    /* ═══════════════════════════════════════
+       RESPONSIVE / MOBILE STYLES
+       Works on all screen sizes automatically
+    ═══════════════════════════════════════ */
+
+    * { box-sizing: border-box; }
+
+    /* Smooth scrolling & tap improvements */
+    html { -webkit-text-size-adjust: 100%; }
+    body { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+
+    /* ── HUD ── */
+    .hud-outer {
+      padding: 8px 14px !important;
+      gap: 10px !important;
+      flex-wrap: wrap !important;
+    }
+    .hud-stats-row {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── CHOICE BUTTONS ── */
+    .choice-btn {
+      min-height: 48px;
+      touch-action: manipulation;
+    }
+
+    /* ── FLAGS ── */
+    .flag-chip { touch-action: manipulation; }
+
+    /* ── TABLET (max 768px) ── */
+    @media (max-width: 768px) {
+      .hud-outer { padding: 8px 12px !important; gap: 8px !important; }
+      .hud-trust { min-width: 140px !important; }
+      .intro-logo-wrap { width: 150px !important; height: 150px !important; }
+      .intro-title-text { font-size: 26px !important; }
+    }
+
+    /* ── MOBILE (max 480px) ── */
+    @media (max-width: 480px) {
+      /* HUD becomes 2 rows */
+      .hud-outer {
+        padding: 8px 10px !important;
+        gap: 6px !important;
+        row-gap: 6px !important;
+      }
+      .hud-brand { flex-shrink: 0; }
+      .hud-brand span { font-size: 11px !important; }
+      .hud-trust {
+        order: 10;
+        flex: 1 1 100% !important;
+        min-width: 0 !important;
+      }
+      .hud-stat { min-width: 42px !important; }
+      .hud-stat-val { font-size: 12px !important; }
+      .hud-btn { padding: 5px 8px !important; font-size: 11px !important; }
+
+      /* Intro */
+      .intro-logo-wrap { width: 120px !important; height: 120px !important; }
+      .intro-title-text { font-size: 22px !important; letter-spacing: 2px !important; }
+      .intro-subtitle { font-size: 10px !important; letter-spacing: 2px !important; }
+      .intro-card { padding: 16px !important; }
+      .intro-kv-label { font-size: 11px !important; min-width: 100px !important; }
+      .intro-kv-val { font-size: 11px !important; }
+      .intro-wrap { padding: 0 10px !important; gap: 14px !important; }
+
+      /* Game level header */
+      .level-header { gap: 10px !important; }
+      .level-title-text { font-size: 14px !important; }
+
+      /* Timer ring smaller */
+      .timer-ring-wrap { width: 58px !important; height: 58px !important; }
+      .timer-svg { width: 58px !important; height: 58px !important; }
+      .timer-num { font-size: 15px !important; }
+
+      /* Cards */
+      .game-card-pad { padding: 14px !important; }
+      .email-card-inner { padding: 14px !important; }
+      .email-from { font-size: 10px !important; }
+      .email-subject { font-size: 12px !important; }
+      .email-body { font-size: 12px !important; line-height: 1.6 !important; }
+
+      /* Login URL bar truncates */
+      .url-bar-text {
+        font-size: 9px !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        white-space: nowrap !important;
+        max-width: calc(100vw - 100px) !important;
+      }
+      .login-inner { padding: 18px 14px !important; }
+      .login-inner input { font-size: 13px !important; padding: 9px 10px !important; }
+
+      /* Choice buttons - big touch targets */
+      .choice-btn {
+        padding: 13px 14px !important;
+        font-size: 13px !important;
+        min-height: 52px !important;
+        line-height: 1.4 !important;
+      }
+
+      /* Feedback */
+      .feedback-icon { font-size: 48px !important; }
+      .feedback-title { font-size: 15px !important; }
+      .feedback-body { font-size: 13px !important; }
+      .feedback-card { padding: 18px !important; }
+      .feedback-stats { gap: 6px !important; }
+      .feedback-stat-val { font-size: 15px !important; }
+
+      /* End screen - 2 col grid */
+      .end-emoji { font-size: 58px !important; }
+      .end-title { font-size: 20px !important; letter-spacing: 1px !important; }
+      .end-grid { grid-template-columns: repeat(2,1fr) !important; gap: 6px !important; }
+      .end-card { padding: 18px !important; }
+      .end-stat-val { font-size: 11px !important; }
+      .end-actions { flex-direction: column !important; }
+      .end-actions > * { width: 100% !important; }
+
+      /* Leaderboard */
+      .board-card { padding: 14px !important; }
+      .board-name { font-size: 13px !important; }
+      .board-sub { font-size: 10px !important; }
+      .board-score { font-size: 14px !important; }
+
+      /* Center padding */
+      .center-wrap { padding: 12px !important; gap: 10px !important; }
+
+      /* Social/multi card */
+      .social-card { padding: 14px !important; }
+      .script-line { font-size: 12px !important; padding: 6px 10px !important; }
+      .step-card { padding: 10px !important; }
+      .step-text { font-size: 12px !important; }
+    }
+
+    /* ── SMALL PHONE (max 360px) ── */
+    @media (max-width: 360px) {
+      .intro-title-text { font-size: 19px !important; }
+      .hud-stat-val { font-size: 11px !important; }
+      .choice-btn { font-size: 12px !important; }
+    }
+
+  </style>
+  <!-- React 18 + Babel (standalone ; no Node.js needed) -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+<script type="text/babel">
+const { useState, useEffect, useRef, useCallback } = React;
+
+// ── BEHAVIOURAL ANALYSIS ENGINE (AI Component) ───────────────────────────────
+const BAE = {
+  log: [],
+  record(level, choice, isCorrect, timeMs, choiceType) {
+    this.log.push({ level, choice, isCorrect, timeMs, choiceType });
+  },
+  computeRisk() {
+    if (!this.log.length) return 0;
+    let risk = 0;
+    this.log.forEach(e => {
+      if (!e.isCorrect) risk += 20;
+      if (e.timeMs < 4000 && !e.isCorrect) risk += 10;
+      if (e.choiceType === "authority" && !e.isCorrect) risk += 8;
+      if (e.choiceType === "urgency" && !e.isCorrect) risk += 8;
+    });
+    return Math.min(100, Math.round(risk / this.log.length * 2.5));
+  },
+  pattern() {
+    if (!this.log.length) return "Analysing...";
+    const r = this.log.filter(e => !e.isCorrect).length / this.log.length;
+    if (r === 0) return "🛡️ Hyper-Vigilant";
+    if (r < 0.3) return "⚠️ Cautious but Vulnerable";
+    if (r < 0.6) return "😟 Too Trusting";
+    return "🚨 High Risk Behaviour";
+  },
+  reset() { this.log = []; }
+};
+
+const LOGO_SRC = "https://raw.githubusercontent.com/ftlcollective/Cybershield_project_WTB5.0_grp45/d6b20fee8fada94ed8352381fa677538936342a9/Images/IMG_1844.png";
+
+const LEVELS = [
+  {
+    id: 1, title: "📧 Level 1: Phishing Email", type: "email", timer: 45,
+    sc: {
+      from: "security@paypa1-alerts.com",
+      subject: "⚠️ URGENT: Your account will be suspended in 24 hours!",
+      body: "Dear Valued Customer,\n\nWe have detected suspicious activity on your account. To avoid permanent suspension, you must verify your details immediately.\n\n👉 http://secure-paypa1-login.net/verify\n\nFailure to act within 24 hours will result in account closure.\n\nSecurity Team",
+      flags: ["paypa1-alerts.com (misspelled)", "Urgency tactic", "Suspicious link", "Generic greeting"]
+    },
+    choices: [
+      { id:"a", text:"🖱️ Click the verification link", correct:false, type:"urgency", trust:-25, money:-500, fb:"💀 You clicked a phishing link! Credentials harvested. $500 stolen." },
+      { id:"b", text:"📋 Enter your details on the linked page", correct:false, type:"authority", trust:-35, money:-1200, fb:"☠️ Login details stolen. Account fully compromised. $1,200 drained." },
+      { id:"c", text:"🗑️ Delete & report as phishing", correct:true, type:"safe", trust:15, money:0, fb:"✅ Correct! 'paypa1-alerts.com' is a fake domain. Never click links in urgent emails." },
+      { id:"d", text:"📞 Call the company via official number", correct:true, type:"safe", trust:10, money:0, fb:"✅ Smart! Always verify through official channels, never links in emails." },
+    ],
+    tip: "Real companies NEVER ask for credentials via email. Always check the sender domain carefully."
+  },
+  {
+    id: 2, title: "💬 Level 2: Fake WhatsApp Scam", type: "chat", timer: 35,
+    sc: {
+      contact: "MOM 👩‍👧", avatar: "👩",
+      messages: [
+        "Hi sweetheart, this is mom! I got a new number 😊",
+        "I'm in a real emergency. My car broke down, I need $2,500 urgently.",
+        "Please send to my new account. I'll explain later. PLEASE HURRY 🙏"
+      ],
+      flags: ["New number claim", "Urgent money request", "No call offered", "Emotional pressure"]
+    },
+    choices: [
+      { id:"a", text:"💸 Send $2,500 immediately, it's Mom!", correct:false, type:"authority", trust:-30, money:-2500, fb:"💀 Not your mom! 'Hi Mum' scam, fraudsters clone contacts. $2,500 gone." },
+      { id:"b", text:"📱 Call your real mom on her original number", correct:true, type:"safe", trust:20, money:0, fb:"✅ Perfect! Always verify by calling the person's known number first." },
+      { id:"c", text:"💬 Ask a question only mom would know", correct:true, type:"safe", trust:15, money:0, fb:"✅ Good! Identity verification questions expose imposters immediately." },
+      { id:"d", text:"💸 Send $500 as a test", correct:false, type:"urgency", trust:-15, money:-500, fb:"⚠️ Any amount sent to a scammer is lost. Never send without full verification." },
+    ],
+    tip: "The 'Hi Mum/Dad' scam is growing fast. ALWAYS call the real person to verify."
+  },
+  {
+    id: 3, title: "🔐 Level 3: Fake Login Page", type: "login", timer: 40,
+    sc: {
+      url: "https://mybank-secure-login.helpdesk-verify.com",
+      siteName: "SecureBank Portal",
+      warning: "Certificate valid but domain is suspicious",
+      flags: ["Domain doesn't match bank", "Helpdesk subdomain", "SSL ≠ safe", "Domain mismatch"]
+    },
+    choices: [
+      { id:"a", text:"🔑 Enter your username and password", correct:false, type:"authority", trust:-40, money:-8000, fb:"☠️ ACCOUNT DRAINED. Fake login pages steal credentials instantly. $8,000 gone." },
+      { id:"b", text:"🔍 Check the URL carefully before typing", correct:true, type:"safe", trust:20, money:0, fb:"✅ Excellent! Always verify the full URL before entering any details." },
+      { id:"c", text:"🔒 It has a padlock so it's safe, proceed", correct:false, type:"authority", trust:-35, money:-8000, fb:"💀 WRONG! HTTPS only encrypts the connection, it does NOT verify the site is legitimate." },
+      { id:"d", text:"📲 Go directly to the official bank app", correct:true, type:"safe", trust:25, money:0, fb:"✅ Best practice! Always use official apps or type the URL directly." },
+    ],
+    tip: "A padlock 🔒 does NOT mean a site is safe. Criminals obtain SSL certificates too!"
+  },
+  {
+    id: 4, title: "😰 Level 4: Vishing Call", type: "social", timer: 30,
+    sc: {
+      caller: "Tax Authority", avatar: "🏛️",
+      script: [
+        "Good afternoon. This is Officer Johnson from the Tax Authority.",
+        "We have issued a warrant for your arrest, unpaid tax fraud.",
+        "You owe $15,000. You have 30 MINUTES or police will be dispatched.",
+        "To avoid arrest, purchase Google Play vouchers and read us the codes.",
+        "This is your FINAL warning. Do not hang up."
+      ],
+      flags: ["Threat of arrest", "Extreme urgency", "Gift card payment demand", "Pressure to stay on line"]
+    },
+    choices: [
+      { id:"a", text:"😱 Buy the vouchers immediately!", correct:false, type:"urgency", trust:-45, money:-15000, fb:"☠️ Classic vishing! Government NEVER demands gift cards. $15,000 scammed." },
+      { id:"b", text:"📵 Hang up & call the tax authority directly", correct:true, type:"safe", trust:25, money:0, fb:"✅ Correct! This is vishing. Tax authorities never call demanding gift cards." },
+      { id:"c", text:"🤝 Negotiate, ask for more time", correct:false, type:"urgency", trust:-20, money:0, fb:"⚠️ Engaging extends manipulation. Always hang up on scammers immediately." },
+      { id:"d", text:"🔇 Put on hold, consult a family member", correct:true, type:"safe", trust:10, money:0, fb:"✅ Good instinct! Pausing breaks the scammer's psychological pressure." },
+    ],
+    tip: "Scammers use FEAR + URGENCY to bypass rational thinking. Slow down = stay safe."
+  },
+  {
+    id: 5, title: "🕸️ Level 5: Multi-Step Attack", type: "multi", timer: 55,
+    sc: {
+      steps: [
+        { phase: "Step 1: LinkedIn Message", color: "#00ff9c", msg: "Hi! I'm a recruiter at a top tech firm. Saw your profile, we have an opening. Complete this quick skills test: [link]" },
+        { phase: "Step 2: Skills Test Site", color: "#facc15", msg: "The test site asks you to install a plugin. It requests access to your browser, camera, and files." },
+        { phase: "Step 3: Offer Letter", color: "#ff3b3b", msg: "Congratulations! You're hired! Fill in your ID, bank account, and tax number to process your first payment." }
+      ],
+      flags: ["Unsolicited recruiter contact", "Plugin install request", "Sensitive info collection", "Too-good-to-be-true offer"]
+    },
+    choices: [
+      { id:"a", text:"🎉 Complete all steps, dream job!", correct:false, type:"authority", trust:-50, money:-20000, fb:"☠️ FULL IDENTITY THEFT. Bank, ID & device compromised. $20,000+ in damages." },
+      { id:"b", text:"🔎 Verify on official company website & LinkedIn", correct:true, type:"safe", trust:30, money:0, fb:"✅ Smart! Legitimate recruiters use verified company emails. Check official portals." },
+      { id:"c", text:"⚠️ Do Step 1 only, chat is harmless", correct:false, type:"urgency", trust:-15, money:0, fb:"⚠️ Multi-step scams build trust gradually. Even Step 1 exposes you." },
+      { id:"d", text:"🚫 Report on LinkedIn & block the account", correct:true, type:"safe", trust:25, money:0, fb:"✅ Perfect. Reporting protects others from this recruitment scam." },
+    ],
+    tip: "Multi-step scams build TRUST before striking. If it feels too good, it is."
+  }
+];
+
+const BADGES = [
+  { id:"sniper",   icon:"🎯", name:"Phishing Sniper",  desc:"Identified first scam correctly",   cond:s=>s.correctFirst },
+  { id:"survivor", icon:"🛡️", name:"Scam Survivor",    desc:"Completed 3+ levels",               cond:s=>s.levelsCompleted>=3 },
+  { id:"trusting", icon:"😅", name:"Too Trusting",     desc:"Fell for 2+ scams",                 cond:s=>s.wrongCount>=2 },
+  { id:"firewall", icon:"🔥", name:"Human Firewall",   desc:"All levels with 70+ trust",         cond:s=>s.levelsCompleted===5&&s.trust>=70 },
+  { id:"master",   icon:"💎", name:"Cyber Master",     desc:"Perfect run, no money lost",       cond:s=>s.levelsCompleted===5&&s.moneyLost===0 },
+];
+
+const fmt = n => "$" + Number(n).toLocaleString();
+
+function TypingText({ text, speed = 22 }) {
+  const [shown, setShown] = useState("");
+  useEffect(() => {
+    setShown("");
+    let i = 0;
+    const id = setInterval(() => { i++; setShown(text.slice(0, i)); if (i >= text.length) clearInterval(id); }, speed);
+    return () => clearInterval(id);
+  }, [text]);
+  return <span style={{ whiteSpace: "pre-wrap" }}>{shown}<span style={{ color: "#00ff9c", animation: "blink 1s step-end infinite" }}>▌</span></span>;
+}
+
+function TimerRing({ value, max }) {
+  const r = 28, circ = 2 * Math.PI * r;
+  const offset = circ * (1 - (max > 0 ? value / max : 0));
+  const color = value <= 10 ? "#ff3b3b" : value <= 20 ? "#facc15" : "#00ff9c";
+  return (
+    <div className="timer-ring-wrap" style={{ position: "relative", width: 76, height: 76, flexShrink: 0 }}>
+      <svg className="timer-svg" width="76" height="76" style={{ transform: "rotate(-90deg)" }}>
+        <circle cx="38" cy="38" r={r} fill="none" stroke="rgba(255,255,255,0.06)" strokeWidth="6" />
+        <circle cx="38" cy="38" r={r} fill="none" stroke={color} strokeWidth="6"
+          strokeDasharray={circ} strokeDashoffset={offset} strokeLinecap="round"
+          style={{ transition: "stroke-dashoffset 1s linear, stroke 0.4s", filter: "drop-shadow(0 0 5px " + color + ")" }} />
+      </svg>
+      <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+        <span className="timer-num" style={{ fontFamily: "monospace", fontSize: 17, fontWeight: 700, color, lineHeight: 1 }}>{value}</span>
+        <span style={{ fontSize: 9, color: "#555", letterSpacing: 1 }}>SEC</span>
+      </div>
+    </div>
+  );
+}
+
+function TrustBar({ value }) {
+  const color = value > 60 ? "#00ff9c" : value > 30 ? "#facc15" : "#ff3b3b";
+  return (
+    <div style={{ minWidth: 180 }}>
+      <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 4 }}>
+        <span style={{ fontSize: 10, color: "#555", letterSpacing: 1, textTransform: "uppercase" }}>Trust ❤️</span>
+        <span style={{ fontFamily: "monospace", fontSize: 13, color, fontWeight: 700 }}>{value}</span>
+      </div>
+      <div style={{ width: "100%", height: 7, background: "rgba(255,255,255,0.06)", borderRadius: 6, overflow: "hidden" }}>
+        <div style={{ height: "100%", width: value + "%", background: color, borderRadius: 6, transition: "width 0.7s ease, background 0.5s", boxShadow: "0 0 8px " + color + "88" }} />
+      </div>
+    </div>
+  );
+}
+
+function HUD({ trust, money, riskScore, level, badges, onBoard, onReset }) {
+  const rColor = riskScore > 60 ? "#ff3b3b" : riskScore > 30 ? "#facc15" : "#00ff9c";
+  const [imgErr, setImgErr] = useState(false);
+  return (
+    <div className="hud-outer" style={{ background: "rgba(5,6,15,0.92)", borderBottom: "1px solid rgba(0,255,156,0.1)", backdropFilter: "blur(16px)", padding: "10px 20px", display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap", position: "sticky", top: 0, zIndex: 100 }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+        {imgErr
+          ? <span style={{ fontSize: 20 }}>🛡️</span>
+          : <img src={LOGO_SRC} onError={() => setImgErr(true)} style={{ width: 30, height: 30, objectFit: "contain", borderRadius: 6, filter: "drop-shadow(0 0 6px rgba(0,200,255,0.6))" }} alt="" />
+        }
+        <span style={{ fontFamily: "monospace", fontSize: 13, color: "#00c8ff", letterSpacing: 1, fontWeight: 700 }}>CYBER SHIELD</span>
+      </div>
+      <div className="hud-trust" style={{ flex: "1 1 200px" }}><TrustBar value={trust} /></div>
+      {[["💰", fmt(money), "#00ff9c"], ["🧠", riskScore, rColor], ["📊", (level + 1) + "/5", "#a78bfa"]].map(([icon, val, col]) => (<>
+        <div key={icon} className="hud-stat" style={{ textAlign: "center", minWidth: 52 }}>
+          <div style={{ fontSize: 9, color: "#444", letterSpacing: 1, textTransform: "uppercase", marginBottom: 2 }}>{icon}</div>
+          <div className="hud-stat-val" style={{ fontFamily: "monospace", fontSize: 14, color: col, fontWeight: 700 }}>{val}</div>
+        </div></>
+      ))}
+      {badges.length > 0 && <div style={{ display: "flex", gap: 4 }}>{badges.map(b => <span key={b.id} title={b.name} style={{ fontSize: 15 }}>{b.icon}</span>)}</div>}
+      <div style={{ marginLeft: "auto", display: "flex", gap: 6 }}>
+        {[["🏆", onBoard], ["↩", onReset]].map(([t, fn]) => (
+          <button key={t} className="hud-btn" onClick={fn} style={{ padding: "6px 12px", borderRadius: 18, border: "1px solid rgba(0,255,156,0.25)", background: "transparent", color: "#7fcfaa", cursor: "pointer", fontSize: 12, fontWeight: 600 }}>{t}</button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function Flags({ flags }) {
+  return (
+    <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 14 }}>
+      {flags.map(f => <span key={f} className="flag-chip" style={{ padding: "3px 10px", borderRadius: 20, fontSize: 11, fontWeight: 600, border: "1px solid rgba(255,59,59,0.4)", color: "#ff3b3b", background: "rgba(255,59,59,0.07)" }}>🚩 {f}</span>)}
+    </div>
+  );
+}
+
+function ChoiceBtn({ choice, onChoose }) {
+  const [hover, setHover] = useState(false);
+  const safe = choice.correct || choice.type === "safe";
+  return (
+    <button onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} onClick={() => onChoose(choice)}
+      className="choice-btn" style={{ width: "100%", textAlign: "left", padding: "12px 16px", border: "1px solid " + (hover ? (safe ? "rgba(0,255,156,0.7)" : "rgba(255,59,59,0.7)") : (safe ? "rgba(0,255,156,0.2)" : "rgba(255,59,59,0.25)")), borderRadius: 12, background: hover ? (safe ? "rgba(0,255,156,0.08)" : "rgba(255,59,59,0.08)") : (safe ? "rgba(0,255,156,0.03)" : "rgba(255,59,59,0.04)"), color: safe ? "#c8f0e0" : "#f8d0d0", fontFamily: "'Inter',sans-serif", fontSize: 13.5, fontWeight: 500, cursor: "pointer", marginBottom: 8, transform: hover ? "translateX(4px)" : "translateX(0)", transition: "all 0.18s", boxShadow: hover ? ("0 0 12px " + (safe ? "rgba(0,255,156,0.15)" : "rgba(255,59,59,0.15)")) : "none" }}>
+      {choice.text}
+    </button>
+  );
+}
+
+function Card({ children, danger, style: extra, className }) {
+  return (
+    <div className={className} style={{ background: "rgba(10,14,30,0.88)", borderRadius: 18, border: "1px solid " + (danger ? "rgba(255,59,59,0.25)" : "rgba(0,255,156,0.12)"), backdropFilter: "blur(12px)", boxShadow: danger ? "0 8px 40px rgba(0,0,0,0.5), 0 0 30px rgba(255,59,59,0.08)" : "0 8px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.04)", ...extra }}>{children}</div>
+  );
+}
+
+function BG() {
+  return (
+    <div style={{ position: "fixed", inset: 0, zIndex: -1, overflow: "hidden", pointerEvents: "none" }}>
+      <div style={{ position: "absolute", width: 600, height: 600, borderRadius: "50%", background: "radial-gradient(circle,rgba(0,255,156,0.06) 0%,transparent 70%)", top: "-10%", right: "-5%" }} />
+      <div style={{ position: "absolute", width: 500, height: 500, borderRadius: "50%", background: "radial-gradient(circle,rgba(139,92,246,0.05) 0%,transparent 70%)", bottom: "5%", left: "-5%" }} />
+      <div style={{ position: "absolute", inset: 0, background: "repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,255,156,0.012) 2px,rgba(0,255,156,0.012) 4px)" }} />
+    </div>
+  );
+}
+
+function PrimaryBtn({ children, onClick, danger }) {
+  const [hover, setHover] = useState(false);
+  return (
+    <button onClick={onClick} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}
+      style={{ width: "100%", padding: 13, borderRadius: 12, border: "none", cursor: "pointer", fontSize: 14, fontWeight: 700, fontFamily: "'Inter',sans-serif", background: danger ? "linear-gradient(135deg,#ff3b3b,#aa0000)" : "linear-gradient(135deg,#00ff9c,#00b36b)", color: danger ? "#fff" : "#03100a", boxShadow: hover ? "0 8px 30px rgba(0,255,156,0.5)" : "0 4px 20px rgba(0,255,156,0.3)", transform: hover ? "translateY(-2px)" : "translateY(0)", transition: "all 0.18s" }}>
+      {children}
+    </button>
+  );
+}
+
+function LogoImage({ size = 160 }) {
+  const [err, setErr] = useState(false);
+  return (
+    <div className="intro-logo-wrap" style={{ width: size, height: size, borderRadius: 24, padding: 4, background: "linear-gradient(135deg, rgba(0,200,255,0.4), rgba(168,85,247,0.4))", boxShadow: "0 0 30px rgba(0,200,255,0.35), 0 0 60px rgba(168,85,247,0.2)" }} className="logo-glow">
+      {err
+        ? <div style={{ width: "100%", height: "100%", borderRadius: 20, background: "linear-gradient(135deg,#0a1628,#1a0a2e)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: size * 0.45 }}>🛡️</div>
+        : <img src={LOGO_SRC} onError={() => setErr(true)} style={{ width: "100%", height: "100%", objectFit: "contain", borderRadius: 20, display: "block" }} alt="Team Cyber Shield" />
+      }
+    </div>
+  );
+}
+
+function App() {
+  const [screen, setScreen]     = useState("intro");
+  const [level,  setLevel]      = useState(0);
+  const [trust,  setTrust]      = useState(100);
+  const [money,  setMoney]      = useState(50000);
+  const [lost,   setLost]       = useState(0);
+  const [risk,   setRisk]       = useState(0);
+  const [timeLeft, setTimeLeft] = useState(0);
+  const [timerMax, setTimerMax] = useState(45);
+  const [feedback, setFeedback] = useState(null);
+  const [badges,   setBadges]   = useState([]);
+  const [shake,    setShake]    = useState(false);
+  const [stats,    setStats]    = useState({ correctFirst:false, levelsCompleted:0, wrongCount:0, trust:100, moneyLost:0 });
+  const [board,    setBoard]    = useState([
+    { name:"CyberHero", trust:98, money:50000, levels:5, score:9800 },
+    { name:"DigitalGuard", trust:85, money:45000, levels:5, score:8200 },
+    { name:"Firewall_Pro", trust:72, money:38000, levels:4, score:6500 },
+  ]);
+  const [nameInput,   setNameInput]   = useState("");
+  const [playerName,  setPlayerName]  = useState("");
+  const [docTab,      setDocTab]      = useState("proposal");
+  const timerRef  = useRef(null);
+  const startTRef = useRef(null);
+  const lv = LEVELS[level];
+
+  const clearTimer = () => clearInterval(timerRef.current);
+
+  const handleTimeout = useCallback(() => {
+    clearTimer();
+    setFeedback({ text: "⏱️ TIME'S UP! Hesitation in real scams costs you. Scammer assumed consent.", correct: false });
+    setTrust(t => Math.max(0, t - 10));
+    setShake(true); setTimeout(() => setShake(false), 500);
+    setScreen("feedback");
+  }, []);
+
+  const startTimer = useCallback((secs) => {
+    clearTimer();
+    setTimeLeft(secs); setTimerMax(secs);
+    startTRef.current = Date.now();
+    timerRef.current = setInterval(() => {
+      setTimeLeft(p => { if (p <= 1) { clearTimer(); handleTimeout(); return 0; } return p - 1; });
+    }, 1000);
+  }, [handleTimeout]);
+
+  useEffect(() => {
+    if (screen === "game" && lv) startTimer(lv.timer);
+    return clearTimer;
+  }, [screen, level]);
+
+  useEffect(() => {
+    const style = document.createElement("style");
+    style.textContent = `
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      body { background: #05060f; }
+      ::-webkit-scrollbar { width: 4px; }
+      ::-webkit-scrollbar-thumb { background: #00ff9c44; border-radius: 4px; }
+      @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+      @keyframes fadeUp { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:translateY(0)} }
+      @keyframes shake { 0%,100%{transform:translateX(0)} 20%{transform:translateX(-7px)} 40%{transform:translateX(7px)} 60%{transform:translateX(-4px)} 80%{transform:translateX(4px)} }
+      @keyframes badgePop { 0%{transform:scale(0);opacity:0} 70%{transform:scale(1.2)} 100%{transform:scale(1);opacity:1} }
+      @keyframes logoPulse {
+        0%   { filter: drop-shadow(0 0 12px rgba(0,200,255,0.7)) drop-shadow(0 0 30px rgba(168,85,247,0.4)) drop-shadow(0 0 60px rgba(0,200,255,0.2)); }
+        50%  { filter: drop-shadow(0 0 28px rgba(0,220,255,1))   drop-shadow(0 0 60px rgba(168,85,247,0.8)) drop-shadow(0 0 100px rgba(0,200,255,0.4)); }
+        100% { filter: drop-shadow(0 0 12px rgba(0,200,255,0.7)) drop-shadow(0 0 30px rgba(168,85,247,0.4)) drop-shadow(0 0 60px rgba(0,200,255,0.2)); }
+      }
+      .fadeUp { animation: fadeUp 0.4s cubic-bezier(0.16,1,0.3,1) forwards; }
+      .shake-anim { animation: shake 0.4s ease; }
+      .badge-pop { animation: badgePop 0.45s cubic-bezier(0.34,1.56,0.64,1) forwards; }
+      .logo-glow { animation: logoPulse 2.5s ease-in-out infinite; border-radius: 20px; }
+    `;
+    document.head.appendChild(style);
+    return () => document.head.removeChild(style);
+  }, []);
+
+  const handleChoice = c => {
+    clearTimer();
+    const ms = Date.now() - (startTRef.current || Date.now());
+    BAE.record(level + 1, c.id, c.correct, ms, c.type);
+    const ns = { ...stats };
+    if (level === 0 && c.correct) ns.correctFirst = true;
+    if (!c.correct) { ns.wrongCount++; setShake(true); setTimeout(() => setShake(false), 500); }
+    if (c.correct) setTrust(t => Math.min(100, t + c.trust));
+    else {
+      setTrust(t => Math.max(0, t + c.trust));
+      if (c.money < 0) { setMoney(m => Math.max(0, m + c.money)); setLost(l => l - c.money); ns.moneyLost = (ns.moneyLost || 0) - c.money; }
+    }
+    setFeedback({ text: c.fb, correct: c.correct });
+    setRisk(BAE.computeRisk()); setStats(ns); setScreen("feedback");
+  };
+
+  const nextLevel = () => {
+    const nc = level + 1;
+    const ns = { ...stats, levelsCompleted: nc, trust, moneyLost: lost };
+    setStats(ns);
+    BADGES.forEach(b => { if (b.cond(ns) && !badges.find(x => x.id === b.id)) setBadges(p => [...p, b]); });
+    if (nc >= LEVELS.length) {
+      const score = Math.round(trust * 100 + (money - lost) / 100);
+      setBoard(p => [...p, { name: playerName || "You", trust, money, levels: 5, score }].sort((a, b) => b.score - a.score).slice(0, 8));
+      setScreen("end");
+    } else { setLevel(l => l + 1); setFeedback(null); setScreen("game"); }
+  };
+
+  const resetGame = () => {
+    BAE.reset(); clearTimer();
+    setScreen("intro"); setLevel(0); setTrust(100); setMoney(50000); setLost(0);
+    setRisk(0); setFeedback(null); setBadges([]); setShake(false);
+    setStats({ correctFirst:false, levelsCompleted:0, wrongCount:0, trust:100, moneyLost:0 });
+    setPlayerName(""); setNameInput("");
+  };
+
+  const hudProps = { trust, money, riskScore: risk, level, badges, onBoard: () => setScreen("leaderboard"), onReset: resetGame };
+  const base = { minHeight: "100vh", background: "#05060f", color: "#eaeaea", fontFamily: "'Inter',sans-serif", display: "flex", flexDirection: "column" };
+  const center = { flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "flex-start", paddingTop: 16, paddingBottom: 20, paddingLeft: 14, paddingRight: 14, gap: 12 };
+  const mono = { fontFamily: "monospace" };
+
+  // ── INTRO ─────────────────────────────────────────────────────────────────
+  if (screen === "intro") return (
+    <div style={{ ...base, alignItems: "center", justifyContent: "center" }}>
+      <BG />
+      <div className="fadeUp" className="intro-wrap" style={{ maxWidth: 540, width: "100%", display: "flex", flexDirection: "column", alignItems: "center", gap: 20, padding: "0 20px" }}>
+        <div style={{ textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}>
+          <LogoImage size={180} />
+          <div style={{ fontSize: 11, color: "#7b8cff", letterSpacing: 4, textTransform: "uppercase", fontWeight: 600, marginTop: 8 }}>TEAM</div>
+          <div className="intro-title-text" style={{ fontFamily: "monospace", fontSize: 30, fontWeight: 700, letterSpacing: 3, background: "linear-gradient(90deg,#00c8ff,#a855f7)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>CYBER SHIELD</div>
+          <div style={{ fontSize: 12, color: "#a78bfa", letterSpacing: 3, textTransform: "uppercase" }}>Human Firewall Challenge</div>
+          <div style={{ fontSize: 12, color: "#444", marginTop: 4 }}>A behavioural cybersecurity training system powered by AI.</div>
+        </div>
+        <Card className="intro-card" style={{ width: "100%", padding: 24 }}>
+          <div style={{ ...mono, fontSize: 10, color: "#00ff9c66", letterSpacing: 2, marginBottom: 12 }}>// MISSION BRIEFING</div>
+          {[["❤️ Trust Meter","Starts at 100. Wrong decisions drain it."],["💰 Virtual Money","$50,000 at stake. Every wrong call has a price."],["⏱️ Countdown","Pressure-timed levels mirror real scams."],["🧠 Behavioural AI","Every decision is analysed for your Risk Score."],["🏅 Badges","Earn achievements based on your cyber instincts."]].map(([k, v]) => (
+            <div key={k} style={{ display: "flex", gap: 12, marginBottom: 10 }}>
+              <span style={{ color: "#00ff9c", fontWeight: 600, fontSize: 13, minWidth: 128 }}>{k}</span>
+              <span style={{ color: "#778", fontSize: 13, lineHeight: 1.5 }}>{v}</span>
+            </div>
+          ))}
+          <div style={{ borderTop: "1px solid rgba(0,255,156,0.1)", paddingTop: 14, marginTop: 8 }}>
+            <input value={nameInput} onChange={e => setNameInput(e.target.value)} placeholder="Enter agent name (optional)"
+              style={{ width: "100%", padding: "10px 14px", borderRadius: 10, border: "1px solid rgba(0,255,156,0.2)", background: "rgba(0,255,156,0.03)", color: "#eaeaea", fontSize: 13, outline: "none", marginBottom: 12 }} />
+            <PrimaryBtn onClick={() => { setPlayerName(nameInput || "Agent"); BAE.reset(); setScreen("game"); }}>🚀 LAUNCH MISSION</PrimaryBtn>
+          </div>
+        </Card>
+      </div>
+    </div>
+  );
+
+  // ── GAME ──────────────────────────────────────────────────────────────────
+  if (screen === "game" && lv) return (
+    <div style={base}>
+      <BG />
+      <HUD {...hudProps} />
+      <div style={center}>
+        <div style={{ display: "flex", alignItems: "center", gap: 16, width: "100%", maxWidth: 640, justifyContent: "space-between" }}>
+          <div>
+            <div style={{ ...mono, fontSize: 10, color: "#00ff9c66", letterSpacing: 2, marginBottom: 2 }}>LEVEL {lv.id} OF 5</div>
+            <div style={{ fontSize: 16, fontWeight: 700 }}>{lv.title}</div>
+          </div>
+          <TimerRing value={timeLeft} max={timerMax} />
+        </div>
+
+        {lv.type === "email" && (
+          <Card className={shake ? "shake-anim" : ""} style={{ width: "100%", maxWidth: 640, padding: 0, overflow: "hidden" }}>
+            <div style={{ background: "rgba(20,5,5,0.9)", borderBottom: "1px solid rgba(255,59,59,0.15)", padding: "10px 16px", display: "flex", gap: 8, alignItems: "center" }}>
+              <span>📧</span><span style={{ ...mono, fontSize: 10, color: "#ff3b3b", letterSpacing: 2 }}>INBOX: SUSPICIOUS EMAIL</span>
+            </div>
+            <div className="email-card-inner" style={{ padding: 20 }}>
+              <div style={{ padding: 14, background: "rgba(255,59,59,0.04)", borderRadius: 10, border: "1px solid rgba(255,59,59,0.12)", marginBottom: 14 }}>
+                <div style={{ fontSize: 12, marginBottom: 4 }}><span style={{ color: "#555" }}>From: </span><span style={{ color: "#facc15", ...mono }}>{lv.sc.from}</span></div>
+                <div style={{ fontSize: 13, fontWeight: 600, marginBottom: 12 }}>{lv.sc.subject}</div>
+                <div style={{ fontSize: 13, color: "#999", lineHeight: 1.75, borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: 12 }}><TypingText text={lv.sc.body} /></div>
+              </div>
+              <Flags flags={lv.sc.flags} />
+              <div style={{ fontSize: 11, color: "#00ff9c", fontWeight: 600, marginBottom: 10, letterSpacing: 0.5 }}>▶ CHOOSE YOUR ACTION:</div>
+              {lv.choices.map(c => <ChoiceBtn key={c.id} choice={c} onChoose={handleChoice} />)}
+            </div>
+          </Card>
+        )}
+
+        {lv.type === "chat" && (
+          <div className={shake ? "shake-anim" : ""} style={{ width: "100%", maxWidth: 420 }}>
+            <div style={{ borderRadius: "16px 16px 0 0", overflow: "hidden", border: "1px solid rgba(0,255,156,0.12)" }}>
+              <div style={{ background: "#075e54", padding: "12px 16px", display: "flex", gap: 10, alignItems: "center" }}>
+                <div style={{ width: 36, height: 36, borderRadius: "50%", background: "rgba(255,255,255,0.15)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20 }}>{lv.sc.avatar}</div>
+                <div><div style={{ fontWeight: 700, color: "#fff", fontSize: 14 }}>{lv.sc.contact}</div><div style={{ color: "#25d366", fontSize: 11 }}>online</div></div>
+              </div>
+              <div style={{ background: "#e5ddd5", padding: 14, minHeight: 150 }}>
+                {lv.sc.messages.map((m, i) => (
+                  <div key={i} style={{ display: "flex", justifyContent: "flex-start", marginBottom: 8 }}>
+                    <div style={{ background: "#fff", borderRadius: "0 12px 12px 12px", padding: "8px 12px", maxWidth: "80%", boxShadow: "0 1px 2px rgba(0,0,0,0.15)" }}>
+                      <div style={{ color: "#111", fontSize: 13 }}>{i === lv.sc.messages.length - 1 ? <TypingText text={m} speed={20} /> : m}</div>
+                      <div style={{ color: "#aaa", fontSize: 9, textAlign: "right", marginTop: 2 }}>14:3{i} ✓✓</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <Card style={{ borderRadius: "0 0 16px 16px", padding: 14, borderTop: "none" }}>
+              <Flags flags={lv.sc.flags} />
+              <div style={{ fontSize: 11, color: "#00ff9c", fontWeight: 600, marginBottom: 10 }}>▶ CHOOSE YOUR ACTION:</div>
+              {lv.choices.map(c => <ChoiceBtn key={c.id} choice={c} onChoose={handleChoice} />)}
+            </Card>
+          </div>
+        )}
+
+        {lv.type === "login" && (
+          <div className={shake ? "shake-anim" : ""} style={{ width: "100%", maxWidth: 480 }}>
+            <div style={{ borderRadius: "14px 14px 0 0", overflow: "hidden", border: "1px solid rgba(0,255,156,0.1)" }}>
+              <div style={{ background: "#1e1e2e", padding: "8px 12px", display: "flex", alignItems: "center", gap: 8 }}>
+                <div style={{ display: "flex", gap: 5 }}>{["#ff5f57","#febc2e","#28c840"].map(c => <div key={c} style={{ width: 11, height: 11, borderRadius: "50%", background: c }} />)}</div>
+                <div className="url-bar-text" style={{ flex: 1, background: "rgba(255,255,255,0.06)", borderRadius: 6, padding: "4px 10px", fontSize: 11, fontFamily: "monospace", color: "#facc15", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>🔒 {lv.sc.url}</div>
+              </div>
+              <div className="login-inner" style={{ background: "#f8f9fa", padding: 28, textAlign: "center" }}>
+                <div style={{ fontSize: 34, marginBottom: 8 }}>🏦</div>
+                <div style={{ color: "#1a1a3e", fontWeight: 700, fontSize: 16, marginBottom: 4 }}>{lv.sc.siteName}</div>
+                <div style={{ color: "#888", fontSize: 12, marginBottom: 16 }}>Secure Customer Login</div>
+                {["Username","Password"].map(p => <input key={p} placeholder={p} type={p==="Password"?"password":"text"} readOnly style={{ width: "100%", padding: "10px 12px", borderRadius: 8, border: "1px solid #ddd", marginBottom: 10, fontSize: 14, background: "#fff", color: "#333" }} />)}
+                <div style={{ background: "#fffbe6", border: "1px solid #facc15", borderRadius: 8, padding: "8px 12px", fontSize: 11, color: "#7a5800", textAlign: "left" }}>⚠️ {lv.sc.warning}</div>
+              </div>
+            </div>
+            <Card style={{ borderRadius: "0 0 14px 14px", padding: 14, borderTop: "none" }}>
+              <Flags flags={lv.sc.flags} />
+              <div style={{ fontSize: 11, color: "#00ff9c", fontWeight: 600, marginBottom: 10 }}>▶ CHOOSE YOUR ACTION:</div>
+              {lv.choices.map(c => <ChoiceBtn key={c.id} choice={c} onChoose={handleChoice} />)}
+            </Card>
+          </div>
+        )}
+
+        {(lv.type === "social" || lv.type === "multi") && (
+          <Card className={shake ? "shake-anim" : ""} style={{ width: "100%", maxWidth: 600, padding: 20 }}>
+            {lv.type === "social" ? (
+              <div>
+                <div style={{ display: "flex", gap: 12, alignItems: "center", marginBottom: 14, padding: 12, background: "rgba(255,59,59,0.06)", borderRadius: 12, border: "1px solid rgba(255,59,59,0.15)" }}>
+                  <div style={{ fontSize: 30 }}>{lv.sc.avatar}</div>
+                  <div><div style={{ color: "#facc15", fontWeight: 700 }}>{lv.sc.caller}</div><div style={{ color: "#ff3b3b", fontSize: 11 }}>📞 INCOMING VISHING CALL</div></div>
+                  <div style={{ marginLeft: "auto", padding: "3px 10px", background: "#ff3b3b22", borderRadius: 20, color: "#ff3b3b", fontSize: 10, border: "1px solid #ff3b3b44" }}>LIVE</div>
+                </div>
+                {lv.sc.script.map((s, i) => (
+                  <div key={i} className="script-line" style={{ padding: "8px 12px", background: "rgba(255,255,255,0.03)", borderRadius: 8, marginBottom: 6, fontSize: 13, color: "#ccc", borderLeft: "3px solid #facc15", fontStyle: "italic" }}>
+                    "{i === lv.sc.script.length - 1 ? <TypingText text={s} speed={20} /> : s}"
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div>
+                <div style={{ ...mono, fontSize: 11, color: "#a78bfa", letterSpacing: 2, marginBottom: 12 }}>⚡ MULTI-VECTOR ATTACK SEQUENCE</div>
+                {lv.sc.steps.map((s, i) => (
+                  <div key={i} className="step-card" style={{ padding: 12, background: "rgba(255,255,255,0.02)", borderRadius: 10, marginBottom: 10, borderLeft: "3px solid " + s.color }}>
+                    <div style={{ color: s.color, fontSize: 11, fontWeight: 700, letterSpacing: 1, marginBottom: 4 }}>{s.phase}</div>
+                    <div style={{ fontSize: 13, color: "#bbb" }}>{i === lv.sc.steps.length - 1 ? <TypingText text={s.msg} speed={18} /> : s.msg}</div>
+                  </div>
+                ))}
+              </div>
+            )}
+            <div style={{ borderTop: "1px solid rgba(0,255,156,0.08)", paddingTop: 14, marginTop: 14 }}>
+              <Flags flags={lv.sc.flags} />
+              <div style={{ fontSize: 11, color: "#00ff9c", fontWeight: 600, marginBottom: 10 }}>▶ CHOOSE YOUR ACTION:</div>
+              {lv.choices.map(c => <ChoiceBtn key={c.id} choice={c} onChoose={handleChoice} />)}
+            </div>
+          </Card>
+        )}
+      </div>
+    </div>
+  );
+
+  // ── FEEDBACK ──────────────────────────────────────────────────────────────
+  if (screen === "feedback") return (
+    <div style={base}>
+      <BG />
+      <HUD {...hudProps} />
+      <div style={center}>
+        <Card danger={!feedback?.correct} className="feedback-card fadeUp" style={{ maxWidth: 560, width: "100%", padding: 28, textAlign: "center" }}>
+          <div style={{ fontSize: 60, marginBottom: 12, filter: "drop-shadow(0 0 14px " + (feedback?.correct ? "#00ff9c" : "#ff3b3b") + ")" }}>{feedback?.correct ? "✅" : "💀"}</div>
+          <div className="feedback-title" style={{ fontFamily: "monospace", fontSize: 18, fontWeight: 700, marginBottom: 14, color: feedback?.correct ? "#00ff9c" : "#ff3b3b", textShadow: "0 0 14px " + (feedback?.correct ? "#00ff9c55" : "#ff3b3b55") }}>
+            {feedback?.correct ? "CORRECT DECISION" : "THREAT DETECTED, TOO LATE"}
+          </div>
+          <div style={{ fontSize: 14, color: "#bbb", lineHeight: 1.75, marginBottom: 20 }}>{feedback?.text}</div>
+          <div style={{ background: "rgba(0,255,156,0.04)", border: "1px solid rgba(0,255,156,0.12)", borderRadius: 12, padding: 16, textAlign: "left", marginBottom: 20 }}>
+            <div style={{ ...mono, fontSize: 10, color: "#00ff9c", letterSpacing: 2, marginBottom: 8 }}>// SECURITY INSIGHT</div>
+            <div style={{ fontSize: 13, color: "#999", lineHeight: 1.6 }}>{lv?.tip}</div>
+          </div>
+          <div className="end-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 10, marginBottom: 20 }}>
+            {[["Trust", trust, trust > 60 ? "#00ff9c" : trust > 30 ? "#facc15" : "#ff3b3b"], ["Money", fmt(money), "#00ff9c"], ["Risk", risk, risk > 60 ? "#ff3b3b" : "#facc15"]].map(([l, v, c]) => (
+              <div key={l} style={{ background: "rgba(255,255,255,0.03)", borderRadius: 10, padding: 12 }}>
+                <div style={{ fontSize: 9, color: "#444", letterSpacing: 1, textTransform: "uppercase", marginBottom: 4 }}>{l}</div>
+                <div style={{ ...mono, fontSize: 18, color: c, fontWeight: 700 }}>{v}</div>
+              </div>
+            ))}
+          </div>
+          <div style={{ fontSize: 12, color: "#555", marginBottom: 16 }}>🧠 AI Pattern: <span style={{ color: "#a78bfa", fontWeight: 600 }}>{BAE.pattern()}</span></div>
+          {badges.length > 0 && (
+            <div style={{ marginBottom: 16, display: "flex", flexWrap: "wrap", gap: 6, justifyContent: "center" }}>
+              {badges.map(b => <span key={b.id} className="badge-pop" style={{ padding: "4px 12px", borderRadius: 20, fontSize: 12, fontWeight: 600, border: "1px solid rgba(250,204,21,0.4)", color: "#facc15", background: "rgba(250,204,21,0.08)" }}>{b.icon} {b.name}</span>)}
+            </div>
+          )}
+          {trust <= 0
+            ? <PrimaryBtn danger onClick={() => setScreen("end")}>💀 View Your Ending</PrimaryBtn>
+            : <PrimaryBtn onClick={nextLevel}>{level + 1 >= LEVELS.length ? "🏁 See Final Results" : "➡️ Next Level (" + (level + 2) + " of 5)"}</PrimaryBtn>}
+        </Card>
+      </div>
+    </div>
+  );
+
+  // ── END ───────────────────────────────────────────────────────────────────
+  if (screen === "end") {
+    const win = trust >= 50 && stats.levelsCompleted >= 4;
+    const perfect = trust >= 80 && lost === 0;
+    const ec = perfect ? "#00ff9c" : win ? "#a78bfa" : "#ff3b3b";
+    return (
+      <div style={{ ...base, alignItems: "center", justifyContent: "center" }}>
+        <BG />
+        <div className="fadeUp" style={{ maxWidth: 580, width: "100%", display: "flex", flexDirection: "column", alignItems: "center", gap: 20, padding: "0 20px" }}>
+          <div style={{ fontSize: 76, filter: "drop-shadow(0 0 22px " + ec + ")", textAlign: "center" }}>{perfect ? "💎" : win ? "🛡️" : "😭"}</div>
+          <div className="end-title" style={{ fontFamily: "monospace", fontSize: 26, fontWeight: 700, color: ec, textShadow: "0 0 18px " + ec + "66", letterSpacing: 2, textAlign: "center" }}>{perfect ? "CYBER MASTER" : win ? "HUMAN FIREWALL" : "DIGITALLY BANKRUPT"}</div>
+          <div style={{ color: "#777", textAlign: "center", fontSize: 13, maxWidth: 420, lineHeight: 1.7 }}>
+            {perfect ? "Flawless run. Every scam identified, zero money lost. You are an elite cyber defender." : win ? "You survived the gauntlet and built real cyber immunity. Stay vigilant." : "You fell for too many scams. Identity compromised, finances drained. Learn from this."}
+          </div>
+          <Card style={{ width: "100%", padding: 24 }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 10, marginBottom: 20 }}>
+              {[["Trust", trust+"/100", trust>60?"#00ff9c":"#ff3b3b"],["Money",fmt(money),"#00ff9c"],["Lost",fmt(lost),lost>0?"#ff3b3b":"#00ff9c"],["Risk",risk+"/100",risk<30?"#00ff9c":"#ff3b3b"],["Pattern",BAE.pattern(),"#a78bfa"],["Levels",stats.levelsCompleted+"/5","#a78bfa"]].map(([l,v,c]) => (
+                <div key={l} style={{ background: "rgba(255,255,255,0.03)", borderRadius: 12, padding: 12, textAlign: "center" }}>
+                  <div style={{ fontSize: 9, color: "#444", letterSpacing: 1, textTransform: "uppercase", marginBottom: 6 }}>{l}</div>
+                  <div style={{ ...mono, fontSize: 13, color: c, fontWeight: 700, wordBreak: "break-word" }}>{v}</div>
+                </div>
+              ))}
+            </div>
+            {badges.length > 0 && (
+              <div style={{ marginBottom: 20 }}>
+                <div style={{ fontSize: 10, color: "#facc15", letterSpacing: 2, textTransform: "uppercase", marginBottom: 10 }}>🏅 Badges Earned</div>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+                  {badges.map(b => <span key={b.id} style={{ padding: "5px 12px", borderRadius: 20, fontSize: 12, fontWeight: 600, border: "1px solid rgba(250,204,21,0.4)", color: "#facc15", background: "rgba(250,204,21,0.07)" }}>{b.icon} {b.name}</span>)}
+                </div>
+              </div>
+            )}
+            <div className="end-actions" style={{ display: "flex", gap: 10 }}>
+              <div style={{ flex: 1 }}><PrimaryBtn onClick={resetGame}>🔄 Play Again</PrimaryBtn></div>
+              <button onClick={() => setScreen("leaderboard")} style={{ flex: 1, padding: 13, borderRadius: 12, border: "1px solid rgba(167,139,250,0.3)", background: "rgba(167,139,250,0.06)", color: "#a78bfa", fontSize: 14, fontWeight: 700, cursor: "pointer" }}>🏆 Leaderboard</button>
+            </div>
+          </Card>
+        </div>
+      </div>
+    );
+  }
+
+  // ── LEADERBOARD ───────────────────────────────────────────────────────────
+  if (screen === "leaderboard") {
+    const sorted = [...board].sort((a, b) => b.score - a.score);
+    return (
+      <div style={base}>
+        <BG />
+        <HUD {...hudProps} />
+        <div style={center}>
+          <div style={{ ...mono, fontSize: 20, color: "#facc15", letterSpacing: 2 }}>🏆 LEADERBOARD</div>
+          <Card style={{ width: "100%", maxWidth: 540, padding: 20 }} className="fadeUp">
+            {sorted.map((p, i) => (
+              <div key={i} style={{ display: "flex", alignItems: "center", gap: 14, padding: "12px 0", borderBottom: "1px solid rgba(255,255,255,0.04)" }}>
+                <div style={{ width: 32, textAlign: "center", fontSize: 20 }}>{i===0?"🥇":i===1?"🥈":i===2?"🥉":<span style={{color:"#555",fontSize:13}}>{i+1}</span>}</div>
+                <div style={{ flex: 1 }}>
+                  <div style={{ fontWeight: 600, color: p.name === playerName ? "#00ff9c" : "#ddd", fontSize: 14 }}>{p.name}{p.name === playerName ? " (You)" : ""}</div>
+                  <div style={{ fontSize: 11, color: "#555", marginTop: 2 }}>Trust {p.trust} · {fmt(p.money)} · {p.levels} levels</div>
+                </div>
+                <div style={{ ...mono, fontSize: 16, color: "#00ff9c", fontWeight: 700 }}>{p.score.toLocaleString()}</div>
+              </div>
+            ))}
+            <div style={{ marginTop: 16 }}>
+              <button onClick={() => setScreen(stats.levelsCompleted > 0 ? "end" : "intro")} style={{ width: "100%", padding: "8px", borderRadius: 18, border: "1px solid rgba(0,255,156,0.25)", background: "transparent", color: "#7fcfaa", cursor: "pointer", fontSize: 12 }}>← Back</button>
+            </div>
+          </Card>
+        </div>
+      </div>
+    );
+  }
+
+  // ── DOCS ──────────────────────────────────────────────────────────────────
+  return <div style={{ ...base, alignItems: "center", justifyContent: "center" }}><div style={{ color: "#00ff9c", fontFamily: "monospace" }}>Loading...</div></div>;
+}
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
+</script>
+</body>
+</html>
