@@ -264,7 +264,7 @@ This project was built using a **combination of AI tools, combined research, and
 
 ---
 ## 📱 Mobile Browser Version
-A separate mobile-optimised version of the game is available in the mobile_browser_version_of_game/ folder as a single self-contained HTML file (CyberShield_Mobile.html). This version has been specifically adapted for smartphones and touch screens, with larger touch targets on all choice buttons, a responsive HUD that wraps cleanly on small screens, reduced font sizes and padding for narrow viewports, a truncating URL bar on the fake login level, a 2-column stats grid on the end screen, and tap delay removal for a smoother feel on iOS and Android. No installation or Node.js is required. Simply open the file in any mobile browser, or upload it to GitHub Pages and share the link directly with mobile users.
+An upgrade to the code was made to make a mobile-optimised version of the game. This version has been specifically adapted for smartphones and touch screens, with larger touch targets on all choice buttons, a responsive HUD that wraps cleanly on small screens, reduced font sizes and padding for narrow viewports, a truncating URL bar on the fake login level, a 2-column stats grid on the end screen, and tap delay removal for a smoother feel on iOS and Android. No installation or Node.js is required. Simply open the file in any mobile browser, or upload it to GitHub Pages and share the link directly with mobile users.
 
 ## Submission Note ; Version History
 
